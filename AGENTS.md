@@ -51,6 +51,10 @@ Agents must **proactively** record durable learnings (see the rule); the user sh
 └── wiki/  (Karpathy LLM wiki — agents maintain pages; see wiki/index.md, wiki/log.md; raw drops in wiki/raw/)
 ```
 
+## Submodule Git workflow
+
+For **every new task** that changes code under **`submodules/<name>/`**, do the work on a **dedicated branch** created from that submodule repository’s **default branch**. Do **not** land task work by committing directly on the default branch. Normative rules, edge cases, and superproject gitlink notes: [`constitutions/CONTEXT.md` § Submodule Git workflow](constitutions/CONTEXT.md#submodule-git-workflow).
+
 ## Routing
 
 | Task | See |
@@ -58,6 +62,7 @@ Agents must **proactively** record durable learnings (see the rule); the user sh
 | Keyword triggers (status keywords, pipeline commands) | [Triggers](#triggers) |
 | Research → Plan → Implement → Verify workflow (RPI v1), scoping, `@rpi-status` schema | [`pipelines/rpi/CONTEXT.md`](pipelines/rpi/CONTEXT.md) |
 | Per-stage contracts and handoff files | [`pipelines/rpi/v1/stages/<stage>/CONTEXT.md`](pipelines/rpi/v1/stages/) |
+| Submodule Git workflow (branch off default) | [`constitutions/CONTEXT.md`](constitutions/CONTEXT.md#submodule-git-workflow) |
 | Submodule mission, tech notes, inbox trackers | [`constitutions/<name>/`](constitutions/) |
 | Checkout / upstream submodule sources | [`submodules/<name>/`](submodules/) |
 | Agent knowledgebase (LLM wiki pattern), `@wiki-lint` | [`wiki/`](wiki/) · [Triggers § `@wiki-lint`](#trigger-wiki-lint) |
