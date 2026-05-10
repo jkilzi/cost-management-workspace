@@ -10,7 +10,7 @@ For a **portable** install checklist (any OpenShift, not only Demo Catalog), use
 |------|--------|
 | Lease / catalog | [Demo Catalog — user service list](https://catalog.demo.redhat.com/services/<your-demo-catalog-user>) |
 | Cluster template | **Single-node OpenShift (SNO)** |
-| Shape | ~**32** vCPU, **128** GiB RAM, **~100** GB storage (template-dependent; treat as planning baseline) |
+| Shape | **32** vCPU, **128** GiB RAM, **100** GB storage (template-dependent; treat as planning baseline) |
 | Pre-created **user-scoped** projects | `assisted-installer`, `cert-manager`, `cert-manager-operator`, **`keycloak`** |
 | Auth for chart | A project named **`keycloak` does not imply RHBK is installed** — see [RHBK below](#rhbk-red-hat-build-of-keycloak-deploy-rhbksh). Chart defaults assume Keycloak in that namespace when JWT is wired. |
 
