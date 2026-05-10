@@ -9,6 +9,8 @@ This wiki is the **compounding layer**: durable, cross-cutting knowledge that sh
 ## Related
 
 - [Entry index](../index.md)
+- [Demo Catalog + cost-onprem install](../entities/demo-catalog-cost-onprem-install.md) — leased OpenShift, SNO, install streamlining (incl. RHBK / `deploy-rhbk.sh`)
+- [cost-onprem-chart install skill](../../.cursor/skills/cost-onprem-chart-install/SKILL.md) — portable OpenShift install order for the submodule chart
 - [AGENTS.md](../../AGENTS.md) — identity, purpose, folder map, routing, triggers
 - [`.cursor/rules/rpi-pipeline.mdc`](../../.cursor/rules/rpi-pipeline.mdc) — RPI v1 index to `pipelines/rpi/` layered `SPEC.md` files and `@rpi-status`
 - [`.cursor/rules/llm-wiki.mdc`](../../.cursor/rules/llm-wiki.mdc) — wiki layers, ingest/query/lint ops, `@wiki-lint` procedure

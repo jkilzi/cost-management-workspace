@@ -14,7 +14,9 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 
 ## Entities
 
-*(Add entity pages — components, services, teams — as they are created.)*
+| Page | Summary |
+|------|---------|
+| [entities/demo-catalog-cost-onprem-install.md](entities/demo-catalog-cost-onprem-install.md) | Demo Catalog leased SNO + pre-scoped projects; install order (S3 → Kafka → **RHBK** → UWM → chart → RBAC); `deploy-rhbk.sh` vs empty `keycloak` NS; skill link. |
 
 ## Sources ingested
 

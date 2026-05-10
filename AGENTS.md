@@ -49,6 +49,7 @@ You are a professional software engineer, you deliver full-stack solutions by le
 | Submodule mission, tech notes, inbox trackers               | `[constitutions/<name>/](constitutions/)`                                                                                                                                                                                                |
 | Checkout / upstream submodule sources                       | `[submodules/<name>/](submodules/)`                                                                                                                                                                                                      |
 | Agent knowledgebase (wiki tree, index, log)                 | `[wiki/](wiki/)`                                                                                                                                                                                                                         |
+| cost-onprem-chart OpenShift install (order, scripts, pitfalls) | `[.cursor/skills/cost-onprem-chart-install/SKILL.md](.cursor/skills/cost-onprem-chart-install/SKILL.md)`; leased-cluster notes in [`wiki/entities/demo-catalog-cost-onprem-install.md`](wiki/entities/demo-catalog-cost-onprem-install.md) |
 
 
 ## Triggers
