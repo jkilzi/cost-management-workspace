@@ -7,3 +7,6 @@
 [submodule "koku-ui"]
 	path = submodules/koku-ui
 	url = https://github.com/project-koku/koku-ui.git
+[submodule "insights-rbac-ui"]
+	path = submodules/insights-rbac-ui
+	url = https://github.com/RedHatInsights/insights-rbac-ui.git
