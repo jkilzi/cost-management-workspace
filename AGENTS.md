@@ -25,7 +25,7 @@ You are a professional software engineer, you deliver full-stack solutions by le
 │               ├── 20-plan/       … same pattern
 │               ├── 30-implement/  … same pattern
 │               └── 40-verify/     … same pattern (see pipelines/rpi/SPEC.md)
-├── constitutions/  (per-submodule mission, tech stack, workspace work trackers)
+├── constitutions/  (per-submodule mission and tech notes)
 │   ├── cost-onprem-chart/
 │   ├── koku/
 │   └── koku-ui/
@@ -46,7 +46,7 @@ You are a professional software engineer, you deliver full-stack solutions by le
 | RPI v1 pipeline (layered specs, scoping, `@rpi-status`) | `[.cursor/rules/rpi-pipeline.mdc](.cursor/rules/rpi-pipeline.mdc)` (index); `[pipelines/rpi/SPEC.md](pipelines/rpi/SPEC.md)` (pipeline spec); `[pipelines/rpi/v1/stages/<stage>/SPEC.md](pipelines/rpi/v1/stages/)` (per-stage) |
 | LLM wiki layers and operations (summary)                    | `[.cursor/rules/llm-wiki.mdc](.cursor/rules/llm-wiki.mdc)`                                                                                                                                                                               |
 | Submodule Git workflow (branch off default)                 | `[.cursor/rules/submodule-git-workflow.mdc](.cursor/rules/submodule-git-workflow.mdc)`                                                                                                                                                   |
-| Submodule mission, tech notes, inbox trackers               | `[constitutions/<name>/](constitutions/)`                                                                                                                                                                                                |
+| Submodule mission and tech notes                            | `[constitutions/<name>/](constitutions/)`                                                                                                                                                                                                |
 | Checkout / upstream submodule sources                       | `[submodules/<name>/](submodules/)`                                                                                                                                                                                                      |
 | Agent knowledgebase (wiki tree, index, log)                 | `[wiki/](wiki/)`                                                                                                                                                                                                                         |
 | cost-onprem-chart OpenShift install (order, scripts, pitfalls) | `[.cursor/skills/cost-onprem-chart-install/SKILL.md](.cursor/skills/cost-onprem-chart-install/SKILL.md)`; leased-cluster notes in [`wiki/entities/demo-catalog-cost-onprem-install.md`](wiki/entities/demo-catalog-cost-onprem-install.md) |

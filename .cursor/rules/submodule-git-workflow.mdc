@@ -18,6 +18,6 @@ For **every new task** that changes code under **`submodules/<name>/`**, do the 
 
 2. **Superproject gitlink:** When the submodule’s checked-out commit changes, record it at the workspace root: `git add <submodule-path>` and commit in the superproject so other clones pin the same revision.
 
-## Exceptions and trackers
+## Exceptions
 
-Project-specific overrides belong in **`constitutions/<name>/constitution.md`**. Detailed normative text (edge cases, **`constitutions/*/tracker.md`** format) lives in [`.cursor/skills/constitutions-tracker-format/SKILL.md`](../skills/constitutions-tracker-format/SKILL.md) (section **Submodule Git workflow**).
+Project-specific overrides belong in **`constitutions/<name>/constitution.md`**.

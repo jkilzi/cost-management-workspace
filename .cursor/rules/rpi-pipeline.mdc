@@ -40,6 +40,6 @@ Human-oriented trigger table: [`AGENTS.md`](../../AGENTS.md) (**Triggers**).
 
 Edits under **`submodules/<name>/`**: branch from that repo’s default branch; superproject gitlink when HEAD changes — **[`.cursor/rules/submodule-git-workflow.mdc`](submodule-git-workflow.mdc)** (also referenced from **30-implement** spec).
 
-## Mission and trackers
+## Mission
 
-Per-project context and inbox format: **`constitutions/<name>/`**; tracker formatting skill: [`constitutions-tracker-format`](../skills/constitutions-tracker-format/SKILL.md).
+Per-submodule mission and conventions: **`constitutions/<name>/`** (for example `constitution.md`).
