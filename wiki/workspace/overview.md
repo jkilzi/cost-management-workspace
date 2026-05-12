@@ -1,6 +1,6 @@
 # Workspace overview
 
-This repository is a **Cost Management** meta-workspace: orchestration (e.g. RPI pipeline under `pipelines/rpi/`), per-submodule mission and trackers under `constitutions/`, and checkout copies under `submodules/`.
+This repository is a **Cost Management** meta-workspace: orchestration (e.g. RPI pipeline under `pipelines/rpi/`), per-submodule mission under `constitutions/`, and checkout copies under `submodules/`.
 
 ## Wiki role
 
