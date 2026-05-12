@@ -34,6 +34,18 @@ One clarifying question if intent is ambiguous.
 - Sort: `--order-by updated --reverse`
 - Pages: `--paginate OFFSET:100`; advance OFFSET by 100 until a page has `<100` issues.
 
+### Subtasks under a parent (components)
+
+When creating **Sub-task** issues (`-t Sub-task -P PARENT-KEY`), **copy the parent’s Components onto the subtask** unless the user specifies otherwise.
+
+1. Read names from the parent:  
+   `jira issue view PARENT-KEY --raw | jq -r '(.fields.components // [])[].name'`
+2. On **`jira issue create`**, pass **one `-C <name>` per component** from that list (`--component` replaces the whole set—include every name you want on the child).
+3. If the parent has **no** components, leave the child unset unless the user asks for components explicitly.
+4. Verify the child matches intent:  
+   `jira issue view CHILD-KEY --raw | jq -r '(.fields.components // [])[].name'`  
+   Prefer setting components **on create** rather than a follow-up **`issue edit`** (easier to forget; edits have sometimes hung).
+
 ---
 
 ### `list_assigned`
