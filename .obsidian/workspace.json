@@ -1,0 +1,190 @@
+{
+  "main": {
+    "id": "8ed5f68baabc5e25",
+    "type": "split",
+    "children": [
+      {
+        "id": "af07362abffb235f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66c0441946b13a83",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "constitutions/cost-onprem-chart/constitution.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "constitution"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4e36945083c099f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "28bf47e0590782e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "75fe65f88952fd2a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "fb6321547221af0f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "4eccc9005fd1b682",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "87c51b8e13f3b73f",
+    "type": "split",
+    "children": [
+      {
+        "id": "5501c46184f3a444",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "50b4603db79a7e07",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "constitutions/cost-onprem-chart/constitution.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for constitution"
+            }
+          },
+          {
+            "id": "b1c1cc87d2a3e5c5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "constitutions/cost-onprem-chart/constitution.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from constitution"
+            }
+          },
+          {
+            "id": "7b700d0bd112f140",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "861da47413773209",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "7280224da8049489",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "constitutions/cost-onprem-chart/constitution.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of constitution"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "66c0441946b13a83",
+  "lastOpenFiles": [
+    "wiki/entities/demo-catalog-cost-onprem-install.md"
+  ]
+}
