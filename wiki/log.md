@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-14] update | RPI 20-plan FLPATH-4164 + 4180
+
+Added `pipelines/rpi/v1/stages/20-plan/output/flpath-4164/PLAN.md` (MFE POC phases 0–7, FACTS) and `flpath-4180/PLAN.md` (research closeout); refreshed `flpath-4164/RESEARCH.md` FAR pointer to **`30-implement`**.
+
 ## [2026-05-14] update | FLPATH-4180 QUESTIONS resolved (insights-rbac-ui submodule)
 
 `flpath-4180/QUESTIONS.md`: no **ExtensionsPlugin** in `fec.config.js`; enumerated **`useChrome`** APIs + **RBACHook** / Unleash; shell-only **`Route`+`ScalprumComponent`** compatible with RBAC **`Routing.tsx`**. `RESEARCH.md` + wiki entity takeaway updated.
