@@ -6,6 +6,10 @@ Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-
 
 Added `constitutions/insights-rbac-ui/constitution.md`; listed `insights-rbac-ui` under `constitutions/` and `submodules/` in `AGENTS.md`.
 
+## [2026-05-14] update | RPI non-code terminal artifacts + spec (flpath-4180)
+
+Added `30-implement/output/flpath-4180/IMPLEMENTATION_LOG.md` and `40-verify/output/flpath-4180/VERIFICATION.md`; `30-implement` / `40-verify` / `pipelines/rpi/SPEC.md` document Jira/wiki-only delivery; `flpath-4180/PLAN.md` handoff links.
+
 ## [2026-05-14] update | FLPATH-4164 Jira carry-forward + scope/PLAN handoff
 
 Digest comment on **FLPATH-4164** (4180 conclusions); `flpath-4164/SCOPE.md` prerequisite note; `flpath-4180/PLAN.md` handoff line.

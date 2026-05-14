@@ -24,3 +24,8 @@ Pipeline research (`pipelines/rpi/v1/stages/10-research/output/<scope>/`) is aut
 ## Example stream
 
 - **FLPATH-4180** — see closing comment on [FLPATH-4180](https://redhat.atlassian.net/browse/FLPATH-4180) and entity [FLPATH-4180 — FEC vs MFE](../entities/flpath-4180-fec-rbac-mfe.md) (links git for people who *do* have the repo).
+
+## Close the RPI loop (no empty stages)
+
+Even when **Jira** is the primary deliverable, add **`pipelines/rpi/v1/stages/30-implement/output/<scope>/IMPLEMENTATION_LOG.md`** (what you did: comments, transitions, wiki edits) and **`40-verify/output/<scope>/VERIFICATION.md`** (**Pass** + human/Jira evidence) so **`@rpi-status`** shows **Done** through verify. See **`pipelines/rpi/v1/stages/30-implement/SPEC.md`** and **`40-verify/SPEC.md`** — *Non-code* / *Jira-primary* paragraphs.
+

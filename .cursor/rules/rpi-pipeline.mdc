@@ -29,6 +29,7 @@ This workspace runs **[Research–Plan–Implement](https://gist.github.com/y0n1
 
 - **Pattern:** `pipelines/rpi/v1/stages/<stage>/output/<scope>/`
 - **`<scope>`** naming, discovery, and artifact sequence (**`SCOPE.md` → `RESEARCH.md` → …**) are defined in **[`pipelines/rpi/SPEC.md`](../../pipelines/rpi/SPEC.md)**—do not invent a parallel scheme here.
+- **Non-code / Jira-primary streams:** still add **`IMPLEMENTATION_LOG.md`** and **`VERIFICATION.md`** so stages are not empty; see **30-implement** / **40-verify** `SPEC.md` and **`pipelines/rpi/SPEC.md`** (artifact chain note).
 
 ## Conversation trigger
 
