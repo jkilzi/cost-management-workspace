@@ -27,13 +27,14 @@ You are a professional software engineer, you deliver full-stack solutions by le
 │               └── 40-verify/     … same pattern (see pipelines/rpi/SPEC.md)
 ├── constitutions/  (per-submodule mission and tech notes)
 │   ├── cost-onprem-chart/
+│   ├── insights-rbac-ui/
 │   ├── koku/
 │   └── koku-ui/
 ├── submodules/
 │   ├── cost-onprem-chart/
+│   ├── insights-rbac-ui/
 │   ├── koku/
-│   ├── koku-ui/
-│   └── ... (other submodules)
+│   └── koku-ui/
 └── wiki/  (Karpathy LLM wiki — agents maintain pages; see wiki/index.md, wiki/log.md; raw drops in wiki/raw/)
 ```
 
