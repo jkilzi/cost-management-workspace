@@ -178,6 +178,8 @@
   },
   "active": "75fe65f88952fd2a",
   "lastOpenFiles": [
+    "constitutions/insights-rbac-ui/constitution.md",
+    "constitutions/insights-rbac-ui",
     "wiki/workspace/jira-handoff-without-public-repo.md",
     "pipelines/rpi/v1/stages/20-plan/output/flpath-4164/PLAN.md",
     "pipelines/rpi/v1/stages/20-plan/output/flpath-4164",
@@ -198,7 +200,6 @@
     "submodules/koku-ui/apps/koku-ui-hccm/src/routes/settings/priceList/utils/index.ts",
     "submodules/koku-ui/apps/koku-ui-hccm/src/routes/settings/priceList/priceLists/details/utils/utils.ts",
     "submodules/koku-ui/apps/koku-ui-hccm/src/routes/settings/priceList/priceLists/details/utils/utils.test.ts",
-    "submodules/koku-ui/apps/koku-ui-hccm/src/routes/settings/priceList/priceLists/details/utils/index.ts",
     "wiki/entities/demo-catalog-cost-onprem-install.md"
   ]
 }
