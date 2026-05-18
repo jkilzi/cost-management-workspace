@@ -64,7 +64,7 @@ Symptom: Keycloak accepts credentials, you briefly see the app, then you are sen
 - **Why an empty `keycloak` project is not enough:** `install-helm-chart.sh` sets `KEYCLOAK_FOUND` from a **`Keycloak` CR** or a service labeled **`app=keycloak`**. An empty namespace → detection fails → Helm runs with **chart defaults** for Keycloak and **no** auto-injected `jwtAuth.keycloak.*`; UI OAuth secret creation is skipped or warns. **Helm can still “succeed” while login/JWT is broken** — treat **`deploy-rhbk.sh` as required** for the standard OpenShift JWT+UI path.
 - **`install-helm-chart.sh help`** still lists RHBK as “optional”; for **UI + Envoy JWT**, that is **misleading** unless you fully BYO Keycloak.
 - **Commands:** `./deploy-rhbk.sh` · `./deploy-rhbk.sh validate` · `./deploy-rhbk.sh cleanup`. See script `help` for env vars (`RHBK_NAMESPACE`, `STORAGE_CLASS`, `COST_MGMT_NAMESPACE`, `COST_MGMT_RELEASE_NAME`, `COST_MGMT_UI_BASE_URL`, etc.).
-- **CSV Failed (`TooManyOperatorGroups`):** Two OperatorGroups in `keycloak` (e.g. console `keycloak-og` + script `rhbk-operator-group`) — delete the duplicate OG; Keycloak may still run. See [known issue](known-issue-rhbk-csv-too-many-operatorgroups.md).
+- **CSV Failed (`TooManyOperatorGroups`):** Two OperatorGroups in `keycloak` — `bash .cursor/skills/cost-onprem-chart-install/scripts/rhbk-fix-csv-too-many-operatorgroups.sh fix`. See [known issue](known-issue-rhbk-csv-too-many-operatorgroups.md).
 - **SNO:** RHBK adds operator + DB + Keycloak — account for extra CPU/RAM alongside Kafka and cost-onprem.
 
 ## Nuances (do not repeat mistakes)

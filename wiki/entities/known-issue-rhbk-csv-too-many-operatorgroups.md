@@ -39,7 +39,22 @@ Expect **two** rows, for example:
 2. `deploy-rhbk.sh` ran later → created `rhbk-operator-group` in the same namespace.
 3. OLM marks the CSV **Failed** until exactly **one** OperatorGroup remains.
 
-## Fix (non-disruptive)
+## Workaround (workspace script)
+
+Idempotent script (same pattern as JWT profile fix):
+
+```bash
+bash .cursor/skills/cost-onprem-chart-install/scripts/rhbk-fix-csv-too-many-operatorgroups.sh verify
+bash .cursor/skills/cost-onprem-chart-install/scripts/rhbk-fix-csv-too-many-operatorgroups.sh fix
+```
+
+Optional env: `RHBK_NAMESPACE` (default `keycloak`), `RHBK_OG_TO_DELETE` (default `rhbk-operator-group`), `RHBK_CSV_WAIT_SECONDS` (default `120`).
+
+**What `fix` does:** deletes the duplicate OperatorGroup (default `rhbk-operator-group`), keeps the original (e.g. `keycloak-og`); if the CSV still shows stale `TooManyOperatorGroups`, annotates `operators.coreos.com/force=true` on the rhbk CSV and waits for `Succeeded`. Does **not** delete Subscription, Keycloak CR, or Keycloak pods.
+
+Documented in the install skill: [`.cursor/skills/cost-onprem-chart-install/SKILL.md`](../../.cursor/skills/cost-onprem-chart-install/SKILL.md).
+
+## Fix (manual)
 
 **Keep** the original OperatorGroup (usually `keycloak-og`). **Delete** the duplicate (usually `rhbk-operator-group`):
 
@@ -48,9 +63,7 @@ oc get operatorgroup -n keycloak
 oc delete operatorgroup rhbk-operator-group -n keycloak
 ```
 
-This does **not** remove the Subscription, Keycloak CR, or Keycloak pods.
-
-Wait 1–2 minutes, then verify:
+Then verify (or use the script above):
 
 ```bash
 oc get operatorgroup -n keycloak          # single row
@@ -58,7 +71,7 @@ oc get csv -n keycloak | grep rhbk        # PHASE=Succeeded
 oc get deployment rhbk-operator -n keycloak
 ```
 
-If the CSV stays **Failed** with a **stale** `TooManyOperatorGroups` message while only one OG remains, OLM may need a nudge (reconciliation can lag). An annotation refresh on the CSV has been observed to help on lab clusters:
+If the CSV stays **Failed** with a **stale** `TooManyOperatorGroups` message while only one OG remains:
 
 ```bash
 oc annotate csv rhbk-operator.v26.4.11-opr.2 -n keycloak \
@@ -69,9 +82,9 @@ Do **not** delete the Subscription or Keycloak CR unless a **new** error appears
 
 ## Prevention
 
-[`deploy-rhbk.sh`](../../submodules/cost-onprem-chart/scripts/deploy-rhbk.sh) creates an OperatorGroup **only if the namespace has none** (same pattern as [`deploy-kafka.sh`](../../submodules/cost-onprem-chart/scripts/deploy-kafka.sh)).
+Avoid a **second** OperatorGroup in `keycloak`: if RHBK was installed from the console first (`keycloak-og`), do **not** let [`deploy-rhbk.sh`](../../submodules/cost-onprem-chart/scripts/deploy-rhbk.sh) create `rhbk-operator-group` — the script only checks for that name, not “any OG in namespace”. Prefer one install path (console **or** script), or delete the duplicate OG before relying on CSV health.
 
-`deploy-rhbk.sh cleanup` still deletes only `rhbk-operator-group`; console installs may leave `keycloak-og` — that is expected.
+`deploy-rhbk.sh cleanup` deletes only `rhbk-operator-group`; console installs may leave `keycloak-og` — that is expected.
 
 ## Related
 

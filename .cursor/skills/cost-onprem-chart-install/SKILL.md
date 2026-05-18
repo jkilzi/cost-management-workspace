@@ -6,7 +6,8 @@ description: >-
   KAFKA_BOOTSTRAP_SERVERS), RHBK/JWT (deploy-rhbk.sh before install-helm-chart.sh
   for standard UI OAuth), S3, User Workload Monitoring, install-helm-chart.sh,
   RBAC bootstrap, UI login bounce (Envoy JWT org_id/account_number 401),
-  Keycloak declarative user profile workaround (keycloak-fix-org-jwt-claims.sh).
+  Keycloak declarative user profile workaround (keycloak-fix-org-jwt-claims.sh),
+  RHBK CSV TooManyOperatorGroups (rhbk-fix-csv-too-many-operatorgroups.sh).
   Use when deploying cost-onprem, install-helm-chart.sh, deploy-kafka.sh,
   deploy-rhbk.sh, AMQ Streams, Keycloak, UI redirects to login after Keycloak,
   or Demo Catalog SNO cost management on-prem.
@@ -50,6 +51,7 @@ cd submodules/cost-onprem-chart
 | `scripts/deploy-rhbk.sh` | RHBK operator, Keycloak DB Postgres, Keycloak CR, realm `kubernetes`, clients `cost-management-operator` / `cost-management-ui`, secrets `keycloak-client-secret-*` |
 | `scripts/install-helm-chart.sh` | Secrets, S3 buckets (when applicable), `verify_kafka`, Keycloak detect, Helm upgrade --install |
 | [scripts/keycloak-fix-org-jwt-claims.sh](scripts/keycloak-fix-org-jwt-claims.sh) (this skill) | **Workaround:** enable Keycloak `unmanagedAttributePolicy` + set user `org_id` / `account_number` when JWT lacks those claims (see **Known issue** below) |
+| [scripts/rhbk-fix-csv-too-many-operatorgroups.sh](scripts/rhbk-fix-csv-too-many-operatorgroups.sh) (this skill) | **Workaround:** remove duplicate OperatorGroup so RHBK CSV leaves `TooManyOperatorGroups` Failed state |
 
 ## Known issue: Keycloak declarative user profile vs Envoy JWT
 
@@ -75,9 +77,24 @@ Optional env vars: `RHBK_NAMESPACE`, `REALM_NAME`, `KEYCLOAK_USERNAME`, `ORG_ID`
 
 **Wiki:** [entities/known-issue-keycloak-declarative-profile-jwt.md](../../wiki/entities/known-issue-keycloak-declarative-profile-jwt.md).
 
-## RHBK nuances
+## Known issue: RHBK CSV `TooManyOperatorGroups`
 
-- **CSV Failed (`TooManyOperatorGroups`):** duplicate OperatorGroup in `keycloak` — see [wiki/entities/known-issue-rhbk-csv-too-many-operatorgroups.md](../../wiki/entities/known-issue-rhbk-csv-too-many-operatorgroups.md).
+**Who is affected:** Clusters where RHBK was installed from the **console** (`keycloak-og`) and **`deploy-rhbk.sh`** also created `rhbk-operator-group`, or any namespace `keycloak` with **two** OperatorGroups.
+
+**Symptom:** `oc get csv -n keycloak` shows `rhbk-operator.v*.*` **Failed**, `reason=TooManyOperatorGroups`. Operator Deployment and Keycloak may still be **Running**.
+
+**Workaround:**
+
+```bash
+bash .cursor/skills/cost-onprem-chart-install/scripts/rhbk-fix-csv-too-many-operatorgroups.sh verify
+bash .cursor/skills/cost-onprem-chart-install/scripts/rhbk-fix-csv-too-many-operatorgroups.sh fix
+```
+
+Optional env: `RHBK_NAMESPACE`, `RHBK_OG_TO_DELETE` (default `rhbk-operator-group`).
+
+**Wiki:** [entities/known-issue-rhbk-csv-too-many-operatorgroups.md](../../wiki/entities/known-issue-rhbk-csv-too-many-operatorgroups.md).
+
+## RHBK nuances
 - Default **`RHBK_NAMESPACE`** / target: **`keycloak`**. **`COST_MGMT_NAMESPACE`** / **`COST_MGMT_RELEASE_NAME`** default to **`cost-onprem`** — used for UI redirect URIs; script can **construct** the UI URL before the UI Route exists.
 - **`install-helm-chart.sh help`** says RHBK is “optional”; for **standard OpenShift JWT + oauth2-proxy UI login**, treat **`deploy-rhbk.sh` as required** unless Keycloak realm/clients/secrets are replicated manually.
 - Missing UI client secret: `create_ui_secrets` **warns** and continues — do not treat green Helm as proof of working login.

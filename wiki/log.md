@@ -2,9 +2,13 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-18] update | RHBK CSV remediation script
+
+Added `rhbk-fix-csv-too-many-operatorgroups.sh` (`verify` / `fix`) under cost-onprem-chart-install skill; wiki + SKILL.md updated.
+
 ## [2026-05-18] ingest | RHBK CSV TooManyOperatorGroups known issue
 
-Documented duplicate OperatorGroup → CSV Failed; non-disruptive fix (delete `rhbk-operator-group`, keep `keycloak-og`); `deploy-rhbk.sh` OG guard; wiki entity + demo-catalog cross-link.
+Documented duplicate OperatorGroup → CSV Failed; non-disruptive fix (delete `rhbk-operator-group`, keep `keycloak-og`); wiki entity + demo-catalog cross-link.
 
 ## [2026-05-18] update | sources-ui reference submodule
 
