@@ -12,7 +12,9 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 
 ## Concepts
 
-*(Add concept pages here as they are created.)*
+| Page | Summary |
+|------|---------|
+| [../docs/architecture/c4/README.md](../docs/architecture/c4/README.md) | **C4 architecture** for Cost Management on-prem (context, containers, Koku/UI components, data flows, repo map). |
 
 ## Entities
 

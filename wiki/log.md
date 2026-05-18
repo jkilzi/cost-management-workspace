@@ -2,9 +2,17 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-18] ingest | C4 architecture docs (workspace docs/)
+
+Added workspace `docs/architecture/c4/` (C4 context, containers, Koku/UI components, data flows, repository map); `docs/README.md` index; wiki Concepts link.
+
 ## [2026-05-14] ingest | Jira CLI: change issue link type (unlink + link)
 
 Added `wiki/workspace/jira-cli-issue-links.md` (Blocks → Related for **4180**/**4164**); index row; `flpath-4180` entity Jira line updated to match live link.
+
+## [2026-05-14] update | FLPATH-4164 Phase 1 rbac-ui-onprem wrapper (koku-ui)
+
+`apps/rbac-ui-onprem` + `verify:onprem` / `rbac-ui.version.json`; PLAN rewritten for wrapper model (no upstream RBAC edits); first `build:onprem` produces `insightsRbac` manifest.
 
 ## [2026-05-14] update | wiki index + entity FLPATH-4164
 
@@ -133,3 +141,7 @@ Documented post-Keycloak “bounce to login” as Envoy/Lua **401** when `org_id
 ## [2026-05-10] update | Keycloak declarative profile JWT workaround
 
 Added `wiki/entities/known-issue-keycloak-declarative-profile-jwt.md`, skill script `.cursor/skills/cost-onprem-chart-install/scripts/keycloak-fix-org-jwt-claims.sh` (`verify`/`fix`), **Known issue** + install-step row in `SKILL.md`; cross-links in `wiki/index.md` and `wiki/entities/demo-catalog-cost-onprem-install.md`.
+
+## [2026-05-17] update | FLPATH-4164 Phase 1 verify + Phase 2 host
+
+`verify-onprem-rbac.sh` finds `Iam` bundle under `dist/exposed-./`; `koku-ui-onprem` static `/rbac/`, `/api/rbac` proxy, `/iam/*` route + nav; PLAN/IMPLEMENTATION_LOG + `wiki/entities/flpath-4164-rbac-mfe-poc.md`.
