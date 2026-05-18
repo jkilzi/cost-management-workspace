@@ -27,5 +27,5 @@ Pipeline research (`pipelines/rpi/v1/stages/10-research/output/<scope>/`) is aut
 
 ## Close the RPI loop (no empty stages)
 
-Even when **Jira** is the primary deliverable, add **`pipelines/rpi/v1/stages/30-implement/output/<scope>/IMPLEMENTATION_LOG.md`** (what you did: comments, transitions, wiki edits) and **`40-verify/output/<scope>/VERIFICATION.md`** (**Pass** + human/Jira evidence) so **`@rpi-status`** shows **Done** through verify. See **`pipelines/rpi/v1/stages/30-implement/SPEC.md`** and **`40-verify/SPEC.md`** — *Non-code* / *Jira-primary* paragraphs.
+Even when **Jira** is the primary deliverable, add **`pipelines/rpi/v1/stages/30-implement/output/<scope>/IMPLEMENTATION_LOG.md`** (what you did: comments, transitions, wiki edits) and **`40-verify/output/<scope>/ACCEPTANCE_CRITERIA.md`** + **`VERIFICATION.md`** (**Pass** + human/Jira evidence) so **`@rpi-status`** shows **Done** through verify. Get human sign-off on acceptance criteria **before** writing final verification outcomes. See **`pipelines/rpi/v1/stages/30-implement/SPEC.md`** and **`40-verify/SPEC.md`** — *Non-code* / *Jira-primary* paragraphs; UI E2E gate: [RPI verify UI acceptance](../topics/rpi-verify-ui-acceptance.md).
 

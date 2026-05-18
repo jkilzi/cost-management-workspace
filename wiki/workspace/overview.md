@@ -19,5 +19,6 @@ Research and plans often live under `pipelines/rpi/…` in this **private** meta
 - [cost-onprem-chart install skill](../../.cursor/skills/cost-onprem-chart-install/SKILL.md) — portable OpenShift install order for the submodule chart
 - [AGENTS.md](../../AGENTS.md) — identity, purpose, folder map, routing, triggers
 - [`.cursor/rules/rpi-pipeline.mdc`](../../.cursor/rules/rpi-pipeline.mdc) — RPI v1 index to `pipelines/rpi/` layered `SPEC.md` files and `@rpi-status`
+- [RPI verify: acceptance criteria + UI E2E](../topics/rpi-verify-ui-acceptance.md) — `40-verify` presents **`ACCEPTANCE_CRITERIA.md`** before running checks; UI-modifying streams exercise the app end-to-end
 - [`.cursor/rules/llm-wiki.mdc`](../../.cursor/rules/llm-wiki.mdc) — wiki layers, ingest/query/lint ops, `@wiki-lint` procedure
 - Submodule Git: [`.cursor/rules/submodule-git-workflow.mdc`](../../.cursor/rules/submodule-git-workflow.mdc)

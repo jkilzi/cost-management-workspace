@@ -16,6 +16,12 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 |------|---------|
 | [../docs/architecture/c4/README.md](../docs/architecture/c4/README.md) | **C4 architecture** for Cost Management on-prem (context, containers, Koku/UI components, data flows, repo map). |
 
+## Topics
+
+| Page | Summary |
+|------|---------|
+| [topics/rpi-verify-ui-acceptance.md](topics/rpi-verify-ui-acceptance.md) | **RPI `40-verify`:** human-refined **`ACCEPTANCE_CRITERIA.md`** before execution; mandatory **UI E2E** when the stream modifies UI. |
+
 ## Entities
 
 | Page | Summary |

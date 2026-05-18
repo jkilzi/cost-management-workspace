@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-18] ingest | RPI verify UI acceptance gate
+
+`40-verify` / `20-plan` / `pipelines/rpi/SPEC.md`: **`ACCEPTANCE_CRITERIA.md`** human gate before execution; UI streams require E2E exercise; wiki topic `topics/rpi-verify-ui-acceptance.md`.
+
 ## [2026-05-18] update | RHBK CSV remediation script
 
 Added `rhbk-fix-csv-too-many-operatorgroups.sh` (`verify` / `fix`) under cost-onprem-chart-install skill; wiki + SKILL.md updated.

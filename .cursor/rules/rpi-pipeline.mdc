@@ -21,7 +21,7 @@ This workspace runs **[Research–Plan–Implement](https://gist.github.com/y0n1
 | **10-research** | Bootstrap scope; facts-only **`RESEARCH.md`**; optional **`QUESTIONS.md`** and **`VERIFICATION_INTAKE.md`** (after verify fail/partial); **FAR** gate; verify loop-back refreshes research | [`pipelines/rpi/v1/stages/10-research/SPEC.md`](../../pipelines/rpi/v1/stages/10-research/SPEC.md) |
 | **20-plan** | Executable **`PLAN.md`** with checkboxes; **FACTS** gate | [`pipelines/rpi/v1/stages/20-plan/SPEC.md`](../../pipelines/rpi/v1/stages/20-plan/SPEC.md) |
 | **30-implement** | Mechanical execution from **`PLAN.md`**; **`IMPLEMENTATION_LOG.md`**; pause on failure | [`pipelines/rpi/v1/stages/30-implement/SPEC.md`](../../pipelines/rpi/v1/stages/30-implement/SPEC.md) |
-| **40-verify** | Evidence in **`VERIFICATION.md`**; pass/fail and follow-ups; fail/partial → **`VERIFICATION_INTAKE.md`** + return to **10-research** | [`pipelines/rpi/v1/stages/40-verify/SPEC.md`](../../pipelines/rpi/v1/stages/40-verify/SPEC.md) |
+| **40-verify** | Draft **`ACCEPTANCE_CRITERIA.md`** and get human sign-off **before** running checks; UI streams require **E2E UI** exercise; evidence in **`VERIFICATION.md`**; fail/partial → **`VERIFICATION_INTAKE.md`** + return to **10-research** | [`pipelines/rpi/v1/stages/40-verify/SPEC.md`](../../pipelines/rpi/v1/stages/40-verify/SPEC.md) |
 
 **Pipeline-wide (scopes, artifact chain, triggers):** [`pipelines/rpi/SPEC.md`](../../pipelines/rpi/SPEC.md).
 
