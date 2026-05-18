@@ -24,6 +24,7 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 | [entities/known-issue-keycloak-declarative-profile-jwt.md](entities/known-issue-keycloak-declarative-profile-jwt.md) | **Known issue:** Keycloak default user profile drops `org_id`/`account_number` → Envoy 401 → UI re-login; skill script workaround + scenarios. |
 | [entities/flpath-4180-fec-rbac-mfe.md](entities/flpath-4180-fec-rbac-mfe.md) | **FLPATH-4180:** FEC `ExtensionsPlugin` / fed docs vs `koku-ui-onprem` Scalprum + `DynamicRemotePlugin`; pointer to RPI `flpath-4180` research (unblocks **FLPATH-4164**). |
 | [entities/flpath-4164-rbac-mfe-poc.md](entities/flpath-4164-rbac-mfe-poc.md) | **FLPATH-4164:** RBAC MFE POC (`koku-ui-onprem` + `/api/rbac/`); RPI research/plan; **§ UX vision** (Stefan mock + screenshot on Jira). |
+| [entities/sources-ui-reference.md](entities/sources-ui-reference.md) | **`sources-ui` submodule:** SaaS Platform Sources UI reference; backend **sources-api-go** (not checked out); vs on-prem `koku-ui-sources`. |
 
 ## Sources ingested
 

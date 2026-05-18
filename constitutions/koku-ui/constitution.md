@@ -16,3 +16,7 @@ Monorepo for Cost Management user interfaces: multiple apps and shared libraries
 - Cypress for UI testing where configured per app
 - Root scripts orchestrate builds and on-prem dev flows across `apps/*` and `libs/*`
 
+## Related reference (workspace)
+
+SaaS Platform Sources UI counterpart for **`apps/koku-ui-sources`**: **`sources-ui`** submodule and [`constitutions/sources-ui/`](../sources-ui/constitution.md) (backend: **sources-api-go**, not checked out here).
+

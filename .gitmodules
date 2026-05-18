@@ -10,3 +10,6 @@
 [submodule "insights-rbac-ui"]
 	path = submodules/insights-rbac-ui
 	url = https://github.com/RedHatInsights/insights-rbac-ui.git
+[submodule "sources-ui"]
+	path = submodules/sources-ui
+	url = https://github.com/RedHatInsights/sources-ui.git

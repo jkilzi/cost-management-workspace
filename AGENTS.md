@@ -29,12 +29,14 @@ You are a professional software engineer, you deliver full-stack solutions by le
 │   ├── cost-onprem-chart/
 │   ├── insights-rbac-ui/
 │   ├── koku/
-│   └── koku-ui/
+│   ├── koku-ui/
+│   └── sources-ui/
 ├── submodules/
 │   ├── cost-onprem-chart/
 │   ├── insights-rbac-ui/
 │   ├── koku/
-│   └── koku-ui/
+│   ├── koku-ui/
+│   └── sources-ui/
 └── wiki/  (Karpathy LLM wiki — agents maintain pages; see wiki/index.md, wiki/log.md; raw drops in wiki/raw/)
 ```
 

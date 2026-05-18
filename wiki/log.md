@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-18] update | sources-ui reference submodule
+
+Added `submodules/sources-ui` (RedHatInsights/sources-ui); constitution + wiki entity; C4 repo map notes **sources-api-go** as SaaS backend (not a submodule).
+
 ## [2026-05-18] ingest | C4 architecture docs (workspace docs/)
 
 Added workspace `docs/architecture/c4/` (C4 context, containers, Koku/UI components, data flows, repository map); `docs/README.md` index; wiki Concepts link.
