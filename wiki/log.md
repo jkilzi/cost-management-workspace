@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-20] update | Cypress live e2e replaces Playwright
+
+`cypress/e2e/live/` (01-app-loads, 02-host-iam-navigation) + `mocked/` move; single `verify:onprem-e2e`; removed Playwright and `e2e/` bash scripts.
+
 ## [2026-05-20] update | On-prem Playwright e2e not for CI
 
 Documented: `verify:onprem-e2e` is local-only after `start:onprem:dev` (real cluster APIs); CI uses `verify:onprem` only. Wiki topic `onprem-playwright-e2e.md`; e2e README, host README, pipeline AC, RPI verify topic.

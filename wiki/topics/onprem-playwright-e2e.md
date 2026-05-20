@@ -1,28 +1,28 @@
-# On-prem Playwright e2e (koku-ui-onprem)
+# On-prem Cypress e2e (koku-ui-onprem)
 
-**Location:** [`submodules/koku-ui/apps/koku-ui-onprem/e2e/`](../../submodules/koku-ui/apps/koku-ui-onprem/e2e/)
+**Location:** [`submodules/koku-ui/apps/koku-ui-onprem/cypress/`](../../submodules/koku-ui/apps/koku-ui-onprem/cypress/)
 
-## Purpose
+## Layout
 
-FLPATH-style smoke: federated IAM inside the on-prem **host** (`localhost:9001`), full remotes, real API proxy — not mocked like [`cypress/`](../submodules/koku-ui/apps/koku-ui-onprem/cypress/) specs.
+| Folder | Runner | Purpose |
+|--------|--------|---------|
+| [`cypress/e2e/mocked/`](../../submodules/koku-ui/apps/koku-ui-onprem/cypress/e2e/mocked/) | `npm run test:cypress` | API mocks via `loadApiInterceptors()` |
+| [`cypress/e2e/live/`](../../submodules/koku-ui/apps/koku-ui-onprem/cypress/e2e/live/) | `npm run verify:onprem-e2e` | Full stack vs real cluster (FLPATH-4164) |
+
+Live order: `01-app-loads.cy.ts` → `02-host-iam-navigation.cy.ts` (8 tests total).
 
 ## Not for CI
 
-Standard **koku-ui** CI does **not** (and should not) run `npm run verify:onprem-e2e`:
+**koku-ui** CI must not run `npm run verify:onprem-e2e`:
 
-- No full on-prem dev stack + cluster APIs in PR jobs.
-- Playwright hits live routes (`/iam/*`, `/api/rbac`, cost federates) that need **`start:onprem:dev`** after `source scripts/setup-onprem-env.sh`.
-
-**Automatable in CI:** `npm run verify:onprem` (RBAC manifest/build script).
-
-**Local integration only:** `verify:onprem-e2e` / `verify:onprem-nav` after `start:onprem:dev`.
+- Needs `npm run start:onprem:dev` (already runs `setup-onprem-env.sh`) and cluster APIs.
+- **Automatable in CI:** `npm run verify:onprem` only.
 
 ## Recommended local flow
 
 ```bash
 cd submodules/koku-ui
 oc login …
-source scripts/setup-onprem-env.sh
 npm run start:onprem:dev
 # other terminal:
 npm run verify:onprem-e2e
@@ -31,5 +31,5 @@ npm run verify:onprem-e2e
 ## Related
 
 - [FLPATH-4164 entity](../entities/flpath-4164-rbac-mfe-poc.md)
-- [RPI 40-verify UI acceptance](rpi-verify-ui-acceptance.md) — Playwright here is **manual/local** evidence, not a CI substitute
+- [RPI 40-verify UI acceptance](rpi-verify-ui-acceptance.md)
 - Pipeline AC: [`pipelines/rpi/v1/stages/40-verify/output/flpath-4164/ACCEPTANCE_CRITERIA.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/ACCEPTANCE_CRITERIA.md)

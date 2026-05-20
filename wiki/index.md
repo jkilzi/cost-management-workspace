@@ -21,7 +21,7 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 | Page | Summary |
 |------|---------|
 | [topics/rpi-verify-ui-acceptance.md](topics/rpi-verify-ui-acceptance.md) | **RPI `40-verify`:** human-refined **`ACCEPTANCE_CRITERIA.md`** before execution; mandatory **UI E2E** when the stream modifies UI. |
-| [topics/onprem-playwright-e2e.md](topics/onprem-playwright-e2e.md) | **`koku-ui-onprem/e2e/`:** Playwright smoke after `start:onprem:dev` + real cluster — **not CI**; `verify:onprem` for automatable checks. |
+| [topics/onprem-playwright-e2e.md](topics/onprem-playwright-e2e.md) | **`koku-ui-onprem/cypress/`:** `mocked/` vs `live/`; `verify:onprem-e2e` after `start:onprem:dev` — **not CI**. |
 
 ## Entities
 
