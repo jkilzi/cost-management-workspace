@@ -26,6 +26,8 @@ flowchart LR
 
 **E2E means:** full user path (e.g. login → navigate → act → visible outcome), not unit tests alone. Use Playwright/Cypress when the submodule documents them; otherwise browser automation or documented manual steps with URL and evidence.
 
+**On-prem Playwright (`koku-ui-onprem/e2e/`):** local-only after `start:onprem:dev` against a real cluster — **not** a CI gate. See [onprem-playwright-e2e.md](onprem-playwright-e2e.md). Record pass/fail in **`VERIFICATION.md`** from developer runs; do not assume PR CI ran the suite.
+
 ## Non-code / Jira-only streams
 
 Still create **`ACCEPTANCE_CRITERIA.md`** (criteria against Jira/plan; **UI-modifying: no**). Skip UI exercise; evidence in **`VERIFICATION.md`** from Jira state and checklist.
