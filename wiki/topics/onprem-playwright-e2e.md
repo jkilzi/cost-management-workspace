@@ -7,13 +7,13 @@
 | Folder | Runner | Purpose |
 |--------|--------|---------|
 | [`cypress/e2e/integration/`](../../submodules/koku-ui/apps/koku-ui-onprem/cypress/e2e/integration/) | `npm run test:cypress` | API mocks via `loadApiInterceptors()` |
-| [`cypress/e2e/live/`](../../submodules/koku-ui/apps/koku-ui-onprem/cypress/e2e/live/) | `npm run verify:onprem-e2e` | E2E vs real cluster (FLPATH-4164) |
+| [`cypress/e2e/live/`](../../submodules/koku-ui/apps/koku-ui-onprem/cypress/e2e/live/) | `npm run test:cypress:live` | E2E vs real cluster (FLPATH-4164) |
 
 Live order: `01-app-loads.cy.ts` → `02-host-iam-navigation.cy.ts` (8 tests total).
 
 ## Not for CI
 
-**koku-ui** CI must not run `npm run verify:onprem-e2e`:
+**koku-ui** CI must not run `npm run test:cypress:live`:
 
 - Needs `npm run start:onprem:dev` (already runs `setup-onprem-env.sh`) and cluster APIs.
 - **Automatable in CI:** `npm run verify:onprem` only.
@@ -25,7 +25,7 @@ cd submodules/koku-ui
 oc login …
 npm run start:onprem:dev
 # other terminal:
-npm run verify:onprem-e2e
+npm run test:cypress:live
 ```
 
 ## Related

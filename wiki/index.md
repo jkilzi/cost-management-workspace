@@ -21,7 +21,7 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 | Page | Summary |
 |------|---------|
 | [topics/rpi-verify-ui-acceptance.md](topics/rpi-verify-ui-acceptance.md) | **RPI `40-verify`:** human-refined **`ACCEPTANCE_CRITERIA.md`** before execution; mandatory **UI E2E** when the stream modifies UI. |
-| [topics/onprem-playwright-e2e.md](topics/onprem-playwright-e2e.md) | **`koku-ui-onprem/cypress/`:** `integration/` vs `live/` e2e; `verify:onprem-e2e` after `start:onprem:dev` — **not CI**. |
+| [topics/onprem-playwright-e2e.md](topics/onprem-playwright-e2e.md) | **`koku-ui-onprem/cypress/`:** `integration/` vs `live/` e2e; `test:cypress:live` after `start:onprem:dev` — **not CI**. |
 
 ## Entities
 

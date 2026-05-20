@@ -13,11 +13,11 @@
 | Layer | State |
 |-------|--------|
 | Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam` (lazy entry); `RBACHook` shim; `npm run verify:onprem` ✅ |
-| Host e2e | `apps/koku-ui-onprem/cypress/e2e/live/` — Cypress smoke via **`verify:onprem-e2e`** after **`start:onprem:dev`**; **not CI** — [onprem-playwright-e2e](../topics/onprem-playwright-e2e.md) |
+| Host e2e | `apps/koku-ui-onprem/cypress/e2e/live/` — Cypress smoke via **`test:cypress:live`** after **`start:onprem:dev`**; **not CI** — [onprem-playwright-e2e](../topics/onprem-playwright-e2e.md) |
 | Host | static `/rbac/`, proxy `/api/rbac`, `/iam/*`, `FlagProvider` under `ScalprumProvider`, chrome stub |
 | Chart | nginx `location /rbac/` — branch `feat/flpath-4164-ui-rbac-nginx` in `cost-onprem-chart` |
 | Cluster image | `quay.io/<your-org>/koku-ui-onprem:flpath-4164-rc16` (cluster); **rc17** = single-tree pack after unified shims (see IMPLEMENTATION_LOG **2026-05-20**) |
 | Branch | `submodules/koku-ui` → `feat/flpath-4164` |
-| Verified | Overview + **My User Access** on cluster; local e2e **8/8** only with `start:onprem:dev` + `verify:onprem-e2e` (developer machine, not CI) |
+| Verified | Overview + **My User Access** on cluster; local e2e **8/8** only with `start:onprem:dev` + `test:cypress:live` (developer machine, not CI) |
 | Host nav | `basename=/iam`, `useAppLink` shim, **stable** `useChrome` singleton, PF shims, `assign`/`href`; see **PLAN.md** Phase 8 |
 | Next | Manual cluster nav spot-check on **rc15** (SSO); PRs (koku-ui + chart) |

@@ -1,6 +1,6 @@
 ---
 name: Cypress live e2e migration
-overview: Replace Playwright e2e/ with structured Cypress specs under cypress/e2e/live/ (verify:onprem-e2e) and cypress/e2e/mocked/ (test:cypress). Remove Playwright; single local gate; clear split between live cluster smoke and mocked API tests.
+overview: Replace Playwright e2e/ with structured Cypress specs under cypress/e2e/live/ (test:cypress:live) and cypress/e2e/mocked/ (test:cypress). Remove Playwright; single local gate; clear split between live cluster smoke and mocked API tests.
 todos:
   - id: move-mocked
     content: git mv auth/, sources/, navigation/ → cypress/e2e/mocked/; update cypress.config.ts specPattern
@@ -9,7 +9,7 @@ todos:
     content: Add cypress/e2e/live/01-app-loads.cy.ts and 02-host-iam-navigation.cy.ts with page objects + setupLiveConsoleGuard
     status: completed
   - id: scripts-config
-    content: Wire verify:onprem-e2e (live) and test:cypress (mocked); remove nav/loads/bash scripts and playwright dep
+    content: Wire test:cypress:live (live) and test:cypress (mocked); remove nav/loads/bash scripts and playwright dep
     status: completed
   - id: remove-playwright
     content: Delete apps/koku-ui-onprem/e2e/; npm install; remove verify:onprem-nav from root package.json
@@ -18,16 +18,16 @@ todos:
     content: Add cypress/README.md; update host README, pipeline AC, wiki topic/index/entity/log
     status: completed
   - id: verify-local
-    content: Manual 8/8 verify:onprem-e2e after start:onprem:dev; npm run test:cypress runs mocked only
+    content: Manual 8/8 test:cypress:live after start:onprem:dev; npm run test:cypress runs mocked only
     status: completed
 isProject: false
 ---
 
-# Cypress live e2e migration (single `verify:onprem-e2e`)
+# Cypress live e2e migration (single `test:cypress:live`)
 
 ## Goals
 
-- **One local gate:** [`verify:onprem-e2e`](submodules/koku-ui/apps/koku-ui-onprem/package.json) runs all 8 live scenarios in a single `cypress run` (no `verify:onprem-nav`, no bash, no Playwright).
+- **One local gate:** [`test:cypress:live`](submodules/koku-ui/apps/koku-ui-onprem/package.json) runs all 8 live scenarios in a single `cypress run` (no `verify:onprem-nav`, no bash, no Playwright).
 - **No new dependencies:** remove `playwright` from [`koku-ui-onprem/package.json`](submodules/koku-ui/apps/koku-ui-onprem/package.json); use existing Cypress ^15.15.0.
 - **Better structure:** `live/` vs `mocked/` folders, page objects, thin numbered live spec files; AC-aligned `it()` titles.
 - **Out of scope (per your opt-out):** `test:cypress:live` alias, separate `cypress.live.config.ts`, CI `throw` guard, broad refactors to [`commands.ts`](submodules/koku-ui/apps/koku-ui-onprem/cypress/support/commands.ts) beyond live-console guard + types.
@@ -56,7 +56,7 @@ cypress/
 ```mermaid
 flowchart TB
   subgraph runners [npm scripts]
-    verify["verify:onprem-e2e"]
+    verify["test:cypress:live"]
     testCy["test:cypress"]
   end
   subgraph specs [cypress/e2e]
@@ -92,7 +92,7 @@ Default config then targets **mocked only**; live runs always pass an explicit `
 ```mermaid
 flowchart LR
   dev["npm run start:onprem:dev"]
-  gate["npm run verify:onprem-e2e"]
+  gate["npm run test:cypress:live"]
   dev -->|"localhost:9001 + cluster APIs"| gate
 ```
 
@@ -128,28 +128,28 @@ cypress/support/
 - Live specs call `beforeEach(() => cy.setupLiveConsoleGuard())` — **do not** call `loadApiInterceptors()`.
 - Page objects centralize selectors from Playwright (`Global navigation`, `Overview`, `My User Access`, etc.).
 
-Add [`cypress/README.md`](submodules/koku-ui/apps/koku-ui-onprem/cypress/README.md): `mocked/` vs `live/`, `test:cypress` vs `verify:onprem-e2e`, `start:onprem:dev`, not CI.
+Add [`cypress/README.md`](submodules/koku-ui/apps/koku-ui-onprem/cypress/README.md): `mocked/` vs `live/`, `test:cypress` vs `test:cypress:live`, `start:onprem:dev`, not CI.
 
 ## Scripts and config
 
 | Script | Command |
 |--------|---------|
-| **`verify:onprem-e2e`** | `cypress run --config-file ./cypress/cypress.config.ts --spec 'cypress/e2e/live/**/*.cy.ts'` |
+| **`test:cypress:live`** | `cypress run --config-file ./cypress/cypress.config.ts --spec 'cypress/e2e/live/**/*.cy.ts'` |
 | **`test:cypress`** | `cypress run --config-file ./cypress/cypress.config.ts` (uses config `specPattern` → `mocked/**` only) |
 | **`test:cypress:open`** | `cypress open --config-file ./cypress/cypress.config.ts` (UI shows mocked by default; live visible under `e2e/live/`) |
 
 **Remove** from [`koku-ui-onprem/package.json`](submodules/koku-ui/apps/koku-ui-onprem/package.json):
 
-- `verify:onprem-e2e:loads`, `verify:onprem-e2e:nav`
+- `test:cypress:live:loads`, `test:cypress:live:nav`
 - Playwright `devDependencies` entry
 
 **Remove** from [`koku-ui/package.json`](submodules/koku-ui/package.json):
 
 - `verify:onprem-nav` script
 
-Keep root `verify:onprem-e2e` → `npm run -w @koku-ui/koku-ui-onprem verify:onprem-e2e`.
+Keep root `test:cypress:live` → `npm run -w @koku-ui/koku-ui-onprem test:cypress:live`.
 
-Do **not** attach `verify:onprem-e2e` to workspace `test`, `build:onprem`, or `verify:onprem` chains.
+Do **not** attach `test:cypress:live` to workspace `test`, `build:onprem`, or `verify:onprem` chains.
 
 Run `npm install` in `submodules/koku-ui` after removing Playwright to refresh lockfile.
 
@@ -172,7 +172,7 @@ Historical pipeline docs (`PLAN.md`, `IMPLEMENTATION_LOG.md`, `VERIFICATION.md`)
 
 1. `npm ci` in `submodules/koku-ui`
 2. Terminal A: `npm run start:onprem:dev`
-3. Terminal B: `npm run verify:onprem-e2e` → expect **8 passing** tests in order (01 then 02)
+3. Terminal B: `npm run test:cypress:live` → expect **8 passing** tests in order (01 then 02)
 4. `npm run test:cypress` → runs **mocked** specs only (no live)
 5. `rg playwright apps/koku-ui-onprem` → no runtime usage
 
