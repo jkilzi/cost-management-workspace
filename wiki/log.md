@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-21] update | IAM NavExpandable host nav (Stefan UX)
+
+Host `AppLayout`: `NavExpandable` “Identity and Access Management” with Overview, My User Access, Users, Roles, Groups; `onpremRemotes.ts` `IAM_NAV_ITEMS`; Cypress `03-iam-sidebar-navigation.cy.ts` (**13/13** live). AC + PLAN + wiki entity updated. No `insights-rbac-ui` edits.
+
 ## [2026-05-21] update | Rename live Cypress script to test:cypress:live
 
 Replaced `verify:onprem-e2e` with `test:cypress:live` in koku-ui package scripts and docs; live gate uses `--config specPattern` (Cypress 15).

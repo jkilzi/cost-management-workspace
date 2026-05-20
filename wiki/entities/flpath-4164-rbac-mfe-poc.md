@@ -18,6 +18,6 @@
 | Chart | nginx `location /rbac/` — branch `feat/flpath-4164-ui-rbac-nginx` in `cost-onprem-chart` |
 | Cluster image | `quay.io/<your-org>/koku-ui-onprem:flpath-4164-rc16` (cluster); **rc17** = single-tree pack after unified shims (see IMPLEMENTATION_LOG **2026-05-20**) |
 | Branch | `submodules/koku-ui` → `feat/flpath-4164` |
-| Verified | Overview + **My User Access** on cluster; local e2e **8/8** only with `start:onprem:dev` + `test:cypress:live` (developer machine, not CI) |
-| Host nav | `basename=/iam`, `useAppLink` shim, **stable** `useChrome` singleton, PF shims, `assign`/`href`; see **PLAN.md** Phase 8 |
-| Next | Manual cluster nav spot-check on **rc15** (SSO); PRs (koku-ui + chart) |
+| Verified | Overview + **My User Access** on cluster; local Cypress **13/13** with `start:onprem:dev` + `test:cypress:live` (not CI) |
+| Host nav | **`NavExpandable` “Identity and Access Management”** after Settings → Overview, My User Access, Users, Roles, Groups; `basename=/iam`, Phase 8 shims — [`ACCEPTANCE_CRITERIA.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/ACCEPTANCE_CRITERIA.md) |
+| Next | Cluster image with nav parity; manual SSO spot-check; PRs (koku-ui + chart) |
