@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-20] update | Cypress mocked → integration folder name
+
+Renamed `cypress/e2e/mocked/` to `e2e/integration/` (mocked APIs); `e2e/live/` remains real e2e gate.
+
 ## [2026-05-20] update | Cypress live e2e replaces Playwright
 
 `cypress/e2e/live/` (01-app-loads, 02-host-iam-navigation) + `mocked/` move; single `verify:onprem-e2e`; removed Playwright and `e2e/` bash scripts.
