@@ -2,6 +2,14 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-21] update | FLPATH-4164 verify partial pass — MUA CSS blocker
+
+Verify downgraded to **partial pass**: functional **rc18** + Cypress **16/16**, but **My User Access** CSS parity vs SaaS open. Added `VERIFICATION_INTAKE.md`, AC visual section, wiki entity.
+
+## [2026-05-21] update | FLPATH-4164 verify stage — rc18, Cypress only
+
+Refreshed `40-verify/output/flpath-4164/VERIFICATION.md` + `ACCEPTANCE_CRITERIA.md`: **rc18** deploy record, Playwright removed, Cypress **16/16** local gate.
+
 ## [2026-05-21] update | FLPATH-4164 rc18 — cluster UI (IAM nav)
 
 `flpath-4164-rc18` on `<leased-cluster>` (`oc set image`); single-tree `build:onprem` pack; in-pod `/rbac/plugin-manifest.json` **200**. `ui-image-values.yaml` + IMPLEMENTATION_LOG + wiki entity.
