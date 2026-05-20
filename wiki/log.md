@@ -2,6 +2,14 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-20] update | FLPATH-4164 rbac-ui-onprem e2e folder
+
+Playwright moved to `apps/rbac-ui-onprem/e2e/`; `verify:onprem-e2e` (3 loads + 5 nav) **8/8** local; acceptance criteria in e2e + pipeline `40-verify`.
+
+## [2026-05-20] update | FLPATH-4164 unified onprem-cloud-deps (lazy Unleash)
+
+Bisect: HCCM TDZ from module-level `parseEnabledFlags()` in feat `unleash/proxy-client-react.ts`. Lazy init + single webpack alias tree; removed dual-shim sync (`sync-onprem-shims-main.sh`, `onprem-shim-roots.cjs`). Pack recipe → single `npm run build:onprem` (**rc17**).
+
 ## [2026-05-19] update | FLPATH-4164 rc16 — cluster IAM freeze (SkeletonTableBody barrel)
 
 RolesTable imported SkeletonTableBody from package root; shared PF chunk 6658 on cluster caused ThBase loop. Barrel shim + drop component-groups from rbac sharedModules → `flpath-4164-rc16` deployed.

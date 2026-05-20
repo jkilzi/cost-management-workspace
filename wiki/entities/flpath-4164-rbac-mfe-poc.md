@@ -12,11 +12,11 @@
 
 | Layer | State |
 |-------|--------|
-| Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam` (lazy entry); `RBACHook` shim; `npm run verify:onprem` ✅ |
+| Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam` (lazy entry); `RBACHook` shim; `npm run verify:onprem` ✅; e2e [`e2e/`](../../submodules/koku-ui/apps/rbac-ui-onprem/e2e/) |
 | Host | static `/rbac/`, proxy `/api/rbac`, `/iam/*`, `FlagProvider` under `ScalprumProvider`, chrome stub |
 | Chart | nginx `location /rbac/` — branch `feat/flpath-4164-ui-rbac-nginx` in `cost-onprem-chart` |
-| Cluster image | `quay.io/<your-org>/koku-ui-onprem:flpath-4164-rc15` — hybrid pack (digest in [`VERIFICATION.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/VERIFICATION.md)) |
+| Cluster image | `quay.io/<your-org>/koku-ui-onprem:flpath-4164-rc16` (cluster); **rc17** = single-tree pack after unified shims (see IMPLEMENTATION_LOG **2026-05-20**) |
 | Branch | `submodules/koku-ui` → `feat/flpath-4164` |
-| Verified | Overview + **My User Access** on `<leased-cluster>`; local nav **5/5** (`verify:onprem-nav`) |
+| Verified | Overview + **My User Access** on `<leased-cluster>`; local e2e **8/8** (`apps/rbac-ui-onprem/e2e/`, `npm run verify:onprem-e2e`) |
 | Host nav | `basename=/iam`, `useAppLink` shim, **stable** `useChrome` singleton, PF shims, `assign`/`href`; see **PLAN.md** Phase 8 |
 | Next | Manual cluster nav spot-check on **rc15** (SSO); PRs (koku-ui + chart) |
