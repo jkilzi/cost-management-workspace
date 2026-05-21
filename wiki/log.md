@@ -2,6 +2,14 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-21] update | FLPATH-4164 visual sign-off cleanup (rc18 POC shell)
+
+Replaced `VISUAL_DIFF_CHECKLIST.md` with [`visual-compare/VISUAL_SIGNOFF.md`](pipelines/rpi/v1/stages/40-verify/output/flpath-4164/visual-compare/VISUAL_SIGNOFF.md); promoted round-2 cluster PNGs; stakeholder accepted IAM nav + five routes; Storybook table/bundle parity tracked as must-fix in intake.
+
+## [2026-05-21] ingest | FLPATH-4164 Storybook vs rc18 visual diff
+
+Local Storybook at `insights-rbac-ui@b4ca3746` vs cluster **rc18**; evidence under `pipelines/rpi/v1/stages/40-verify/output/flpath-4164/visual-compare/` (superseded by sign-off doc).
+
 ## [2026-05-21] update | FLPATH-4164 verify partial pass — MUA CSS blocker
 
 Verify downgraded to **partial pass**: functional **rc18** + Cypress **16/16**, but **My User Access** CSS parity vs SaaS open. Added `VERIFICATION_INTAKE.md`, AC visual section, wiki entity.

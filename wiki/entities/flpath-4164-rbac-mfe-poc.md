@@ -18,7 +18,7 @@
 | Chart | nginx `location /rbac/` — branch `feat/flpath-4164-ui-rbac-nginx` in `cost-onprem-chart` |
 | Cluster image | `quay.io/<your-org>/koku-ui-onprem:flpath-4164-rc18` (<leased-cluster>; IAM NavExpandable + `/iam` prefix nav) |
 | Branch | `submodules/koku-ui` → `feat/flpath-4164` |
-| Verified | [`VERIFICATION.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/VERIFICATION.md) **Partial pass** — rc18 functional; **MUA CSS vs SaaS open** (blocker) |
+| Verified | [`VERIFICATION.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/VERIFICATION.md) **Partial pass** — rc18 functional + **POC shell sign-off** ([`VISUAL_SIGNOFF.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/visual-compare/VISUAL_SIGNOFF.md)) |
 | Host nav | **`NavExpandable` “Identity and Access Management”** after Settings → Overview, My User Access, Users, Roles, Groups — [`ACCEPTANCE_CRITERIA.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/ACCEPTANCE_CRITERIA.md) |
-| CSS / layout | **Open** — `/iam/my-user-access` differs from SaaS; intake [`VERIFICATION_INTAKE.md`](../../pipelines/rpi/v1/stages/10-research/output/flpath-4164/VERIFICATION_INTAKE.md); layers **H** host / **C** chrome / **M** MUA body |
-| Next | Collect SaaS vs on-prem evidence → research refresh → plan CSS phase → implement → re-verify |
+| Visual (Storybook parity) | **Open** — MUA-02 bundle cards; Users/Roles/Groups `TableView` chrome — **must fix** per intake; breadcrumbs/tab title out of POC scope |
+| Next | Plan/implement Storybook parity → **rc19+** re-verify; optional overview `iam.svg` host asset |
