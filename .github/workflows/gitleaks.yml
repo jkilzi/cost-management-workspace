@@ -1,0 +1,23 @@
+# Copy to .github/workflows/gitleaks.yml on GitHub (needs git push `workflow` scope)
+# or: gh auth refresh -h github.com -s workflow && git push
+name: gitleaks
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan repository (full history on default branch)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_CONFIG: .gitleaks.toml
