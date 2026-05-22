@@ -2,6 +2,14 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-22] update | copy-cluster-visual-compare DEST path
+
+`koku-ui/scripts/copy-cluster-visual-compare.sh` used `../pipelines` from submodule root (wrote `submodules/pipelines/`); fixed to `../../pipelines` → workspace `pipelines/rpi/.../visual-compare/cluster/`. Removed accidental `submodules/pipelines/`.
+
+## [2026-05-22] update | FLPATH-4164 OV iam.svg host static
+
+`koku-ui-onprem`: vendored `iam.svg` + `CopyWebpackPlugin` → `/apps/frontend-assets/technology-icons/iam.svg`; Cypress `parity-overview` asserts icon load. [`VISUAL_SIGNOFF.md`](pipelines/rpi/v1/stages/40-verify/output/flpath-4164/visual-compare/VISUAL_SIGNOFF.md).
+
 ## [2026-05-21] update | FLPATH-4164 rc19 deploy + cluster parity E2E
 
 Image `flpath-4164-rc19` on <leased-cluster>; `test:cypress:live:parity` **11/11**; refreshed `visual-compare/cluster/*.png`; [`VERIFICATION.md`](pipelines/rpi/v1/stages/40-verify/output/flpath-4164/VERIFICATION.md) updated.

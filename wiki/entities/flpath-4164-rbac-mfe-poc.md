@@ -21,5 +21,5 @@
 | Verified | [`VERIFICATION.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/VERIFICATION.md) **Partial pass** — POC shell (rc18) + parity must-fix on **rc19** |
 | Host nav | **`NavExpandable` “Identity and Access Management”** after Settings → Overview, My User Access, Users, Roles, Groups — [`ACCEPTANCE_CRITERIA.md`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/ACCEPTANCE_CRITERIA.md) |
 | Cluster E2E | `npm run test:cypress:live:parity` — **11/11** (`koku-ui@ba9b1b0e1`) |
-| Visual (Storybook parity) | **Must-fix pass** on rc19 — [`visual-compare/cluster/`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/visual-compare/cluster/); OV `iam.svg` optional |
-| Next | Stakeholder review rc19 screenshots; optional overview `iam.svg` host asset |
+| Visual (Storybook parity) | **Must-fix pass** on rc19 — [`visual-compare/cluster/`](../../pipelines/rpi/v1/stages/40-verify/output/flpath-4164/visual-compare/cluster/); OV `iam.svg` **fixed** in host (`CopyWebpackPlugin` → `/apps/frontend-assets/technology-icons/iam.svg`) |
+| Next | Build/push **rc20+** for cluster OV screenshot; stakeholder review rc19 screenshots |
