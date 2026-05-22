@@ -1,0 +1,10 @@
+***REMOVED***
+literal:quay.io/<your-org>==>quay.io/<your-org>
+literal:<quay-pull-secret>==><quay-pull-secret>
+literal:cost-onprem-ui-cost-onprem.apps.<leased-cluster>.<workshop-domain>==>cost-onprem-ui-cost-onprem.apps.<leased-cluster>.<workshop-domain>
+literal:cost-onprem-ui-cost-onprem.apps.<leased-cluster>.<workshop-domain>==>cost-onprem-ui-cost-onprem.apps.<leased-cluster>.<workshop-domain>
+literal:<your-demo-catalog-user>==><your-demo-catalog-user>
+literal:<WORKSPACE_ROOT>==><WORKSPACE_ROOT>
+literal:<leased-cluster>==><leased-cluster>
+literal:<leased-cluster>==><leased-cluster>
+literal:personal Quay==>personal Quay

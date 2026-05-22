@@ -1,0 +1,21 @@
+title = "cost-management-workspace gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Placeholders and scrub tooling"
+paths = [
+  '''scripts/history-scrub/''',
+  '''wiki/workspace/public-repo-hygiene.md''',
+  '''wiki/workspace/public-push.md''',
+]
+regexTarget = "line"
+regexes = [
+  '''<your-org>''',
+  '''<leased-cluster>''',
+  '''<quay-pull-secret>''',
+  '''<workshop-domain>''',
+  '''<your-demo-catalog-user>''',
+  '''<WORKSPACE_ROOT>''',
+]

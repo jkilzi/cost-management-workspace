@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-22] update | History scrub + gitleaks gate (public push prep)
+
+`git filter-repo` removed `pipelines/rpi` and `scripts/rpi` from all commits; redacted Quay/cluster/catalog strings. Added `.gitleaks.toml`, GitHub Actions `gitleaks.yml`, `scripts/install-gitleaks-hook.sh`, [public-push.md](workspace/public-push.md).
+
 ## [2026-05-22] lint | Public repo hygiene (redact + gitignore)
 
 Added [public-repo-hygiene.md](workspace/public-repo-hygiene.md); gitignore `wiki/**/visual-compare/cluster/`; redacted personal Quay, Demo Catalog URL, and workshop cluster hosts in entity pages, log, and plans; `visual-compare/README.md` for local PNG workflow.

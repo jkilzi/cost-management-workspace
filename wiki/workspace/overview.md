@@ -12,7 +12,7 @@ Research and status live in **`wiki/entities/`** and Jira comments. **Jira comme
 
 **Issue links:** To replace **Blocks** with **Related** (or any type change), Jira has no in-place edit — use **`jira issue unlink`** then **`jira issue link`** — see **[Jira CLI: change issue link type](jira-cli-issue-links.md)**.
 
-**Public sharing:** Redact personal Quay, Demo Catalog, and workshop cluster URLs before publishing; see **[Public repo hygiene](public-repo-hygiene.md)**.
+**Public sharing:** Redact personal Quay, Demo Catalog, and workshop cluster URLs before publishing; see **[Public repo hygiene](public-repo-hygiene.md)** and **[Public push](public-push.md)** (history scrub + gitleaks).
 
 ## Related
 

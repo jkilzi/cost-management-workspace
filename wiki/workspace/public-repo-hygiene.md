@@ -29,4 +29,11 @@ Entity pages for scoped work may keep **image tags** and **namespace** (`cost-on
 
 ## History
 
-Deleted paths (e.g. `pipelines/rpi/`) may still appear in **git history**. Run a secret/history scanner before making the repository public.
+Scrub workspace-specific strings and drop `pipelines/rpi/` from all commits:
+
+```bash
+./scripts/history-scrub/run-filter-repo.sh
+gitleaks detect --log-opts=--all
+```
+
+Then follow **[public-push.md](public-push.md)** before `git push --force-with-lease`.

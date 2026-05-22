@@ -10,6 +10,7 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 | [workspace/jira-handoff-without-public-repo.md](workspace/jira-handoff-without-public-repo.md) | How to make research outcomes discoverable in **Jira** when this workspace is not published (paste summary, carry-forward, attachments). |
 | [workspace/jira-cli-issue-links.md](workspace/jira-cli-issue-links.md) | Change Jira issue link type with **`jira`**: unlink inward/outward pair, link again (`Related` vs `Relates` on redhat.atlassian.net); verify with `jira issue view`. |
 | [workspace/public-repo-hygiene.md](workspace/public-repo-hygiene.md) | **Public sharing:** gitignore for Playwright dumps and cluster screenshots; redact personal Quay/catalog/cluster URLs in wiki. |
+| [workspace/public-push.md](workspace/public-push.md) | **Public push:** post–`filter-repo` verification, gitleaks gate, force-push checklist. |
 
 ## Concepts
 
