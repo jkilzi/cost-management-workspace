@@ -54,6 +54,8 @@ fi
 echo ""
 
 export VALUES_FILE
+# Helm SSA: allow chart to reclaim fields touched by oc/kubectl set (e.g. UI image hotfixes)
+export HELM_FORCE_CONFLICTS="${HELM_FORCE_CONFLICTS:-true}"
 cd "$CHART_DIR"
 ./scripts/install-helm-chart.sh
 

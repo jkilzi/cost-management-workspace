@@ -32,6 +32,8 @@ No automatic builds on git push, tags, or branch names. The workflow builds the 
 
 Uses [`install-helm-chart.sh`](../../submodules/cost-onprem-chart/scripts/install-helm-chart.sh) with `VALUES_FILE` — same chart path as [cost-onprem-chart-install](../../.cursor/skills/cost-onprem-chart-install/SKILL.md).
 
+**SSA / `oc set image`:** UI rollouts set `HELM_FORCE_CONFLICTS=true` so Helm passes `--force-conflicts` and reclaims fields previously patched outside Helm (e.g. emergency `oc set image` on `cost-onprem-ui`).
+
 ## Mac amd64 limitation
 
 Do not rely on local `podman build --platform linux/amd64` for cluster tags. See [containers/podman#18271](https://github.com/containers/podman/issues/18271), [#18301](https://github.com/containers/podman/issues/18301).

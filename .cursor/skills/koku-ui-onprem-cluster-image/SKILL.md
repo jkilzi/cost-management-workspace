@@ -77,6 +77,8 @@ bash .cursor/skills/koku-ui-onprem-cluster-image/scripts/verify-ui-pod.sh
 
 `rollout-ui-image.sh` runs `VALUES_FILE=<local yaml>` + [`install-helm-chart.sh`](../../../submodules/cost-onprem-chart/scripts/install-helm-chart.sh) from `submodules/cost-onprem-chart/`.
 
+**Helm SSA conflicts:** If a prior `oc set image` or `kubectl apply` touched chart-owned fields, `helm upgrade` can fail with server-side apply conflicts. `rollout-ui-image.sh` sets `HELM_FORCE_CONFLICTS=true` (adds `--force-conflicts`). For manual installs: `HELM_FORCE_CONFLICTS=true ./scripts/install-helm-chart.sh -f …`.
+
 ### Verify
 
 - In-pod: `GET /rbac/plugin-manifest.json` → **200** (`verify-ui-pod.sh`)

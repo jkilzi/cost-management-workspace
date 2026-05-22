@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-22] update | Helm SSA fix — HELM_FORCE_CONFLICTS for UI rollout
+
+`install-helm-chart.sh` supports `HELM_FORCE_CONFLICTS=true` (`--force-conflicts`); `rollout-ui-image.sh` enables by default. Verified Helm upgrade revision 11 on cluster after prior `oc set image` conflicts.
+
 ## [2026-05-22] update | Cluster UI rc22 — MUA PF addons + oc set image
 
 Built `quay.io/jkilzi/koku-ui-onprem:flpath-4164-rc22` (GHA run 26304296887); Helm upgrade failed on SSA conflicts — deployed via `oc set image` on `cost-onprem-ui` app container.
