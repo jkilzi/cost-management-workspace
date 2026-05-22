@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-22] ingest | koku-ui-onprem cluster image skill + GHA build
+
+Added `koku-ui-onprem-cluster-image` skill (GHA `workflow_dispatch` build → Quay; local Helm rollout), `.github/workflows/build-koku-ui-onprem.yml`, topic [onprem-ui-cluster-image.md](topics/onprem-ui-cluster-image.md); updated FLPATH-4164 cluster deploy and `AGENTS.md` routing.
+
 ## [2026-05-22] update | Flatten constitutions to constitutions/<submodule>.md
 
 Moved five `constitutions/<name>/constitution.md` files to flat `constitutions/<name>.md`; updated `AGENTS.md`, workspace/submodule git rules, and `wiki/entities/sources-ui-reference.md`.

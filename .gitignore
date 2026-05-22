@@ -8,3 +8,6 @@ wiki/**/visual-compare/cluster/
 
 # Local upstream mapping for git-submodules-status skill (see references/config.schema.json)
 .cursor/skills/git-submodules-status/references/config.json
+
+# Local Helm UI image override (personal Quay tag; koku-ui-onprem-cluster-image skill)
+.cursor/skills/koku-ui-onprem-cluster-image/references/ui-image-values.local.yaml

@@ -33,6 +33,7 @@ You are a professional software engineer, you deliver full-stack solutions by le
 | Checkout / upstream submodule sources | [`submodules/<name>/`](submodules/) |
 | Agent knowledgebase (wiki tree, index, log) | [`wiki/`](wiki/) |
 | cost-onprem-chart OpenShift install | [`.cursor/skills/cost-onprem-chart-install/SKILL.md`](.cursor/skills/cost-onprem-chart-install/SKILL.md); [`wiki/entities/demo-catalog-cost-onprem-install.md`](wiki/entities/demo-catalog-cost-onprem-install.md) |
+| koku-ui-onprem cluster image (GHA build + local Helm rollout) | [`.cursor/skills/koku-ui-onprem-cluster-image/SKILL.md`](.cursor/skills/koku-ui-onprem-cluster-image/SKILL.md); [`wiki/topics/onprem-ui-cluster-image.md`](wiki/topics/onprem-ui-cluster-image.md) |
 
 Historical [`.cursor/plans/`](.cursor/plans/) may reference removed `pipelines/rpi/` paths (pre-2026-05-22); prefer wiki entities and current rules.
 

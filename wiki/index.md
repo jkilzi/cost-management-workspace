@@ -24,6 +24,7 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 |------|---------|
 | [topics/ui-verification-and-e2e.md](topics/ui-verification-and-e2e.md) | **Cursor harness:** acceptance criteria on entity pages; mandatory **UI E2E** when the stream modifies UI. |
 | [topics/onprem-playwright-e2e.md](topics/onprem-playwright-e2e.md) | **`koku-ui-onprem/cypress/`:** `integration/` vs `live/` e2e; `test:cypress:live` after `start:onprem:dev` — **not CI**. |
+| [topics/onprem-ui-cluster-image.md](topics/onprem-ui-cluster-image.md) | **Cluster UI image:** on-demand GHA amd64 build → Quay; local Helm rollout + in-pod manifest verify (not Mac amd64 podman). |
 
 ## Entities
 

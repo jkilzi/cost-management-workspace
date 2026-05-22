@@ -1,0 +1,14 @@
+# Copy to ui-image-values.local.yaml (gitignored) and set tag before rollout.
+# Used with: scripts/rollout-ui-image.sh → install-helm-chart.sh (VALUES_FILE)
+
+ui:
+  app:
+    image:
+      repository: quay.io/<your-org>/koku-ui-onprem
+      tag: "flpath-4164-rc22"
+      pullPolicy: IfNotPresent
+
+# Uncomment if the cluster needs credentials to pull from personal Quay:
+# global:
+#   imagePullSecrets:
+#     - name: <quay-pull-secret>

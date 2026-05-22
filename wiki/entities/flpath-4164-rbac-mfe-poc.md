@@ -86,16 +86,17 @@ On-prem Cost Management RBAC UI: reuse HCC direction, Keycloak between IDP and C
 
 **Fixes:** Webpack shims (`LoaderPlaceholders`, `TableView`); host full-page nav for cross-app; stable `useChrome` singleton; `remoteKey` on Scalprum; basename `/iam` on host router.
 
-## Cluster deploy (interim)
+## Cluster deploy
 
 | Item | Value |
 |------|--------|
-| **Image** | `quay.io/<your-org>/koku-ui-onprem:flpath-4164-rc21` |
+| **Image** | `quay.io/<your-org>/koku-ui-onprem:flpath-4164-rc21` (record current tag here after rollout) |
 | **Cluster** | `<leased-cluster>`, namespace `cost-onprem` |
-| **Deploy** | `oc set image deployment/cost-onprem-ui -n cost-onprem app=quay.io/<your-org>/koku-ui-onprem:flpath-4164-rc21` |
-| **Verify in pod** | `curl http://127.0.0.1:8080/rbac/plugin-manifest.json` → **200** |
+| **Build** | On-demand GHA — [koku-ui-onprem-cluster-image skill](../../.cursor/skills/koku-ui-onprem-cluster-image/SKILL.md) → `trigger-build.sh <tag>` ([wiki topic](../topics/onprem-ui-cluster-image.md)) |
+| **Rollout** | Local Helm — `ui-image-values.local.yaml` + `rollout-ui-image.sh` (not GHA) |
+| **Verify in pod** | `verify-ui-pod.sh` or `curl http://127.0.0.1:8080/rbac/plugin-manifest.json` → **200** |
 
-Full amd64 pack recipe (`Dockerfile.pack-amd64`, `ui-image-values.yaml`, hybrid host `build:onprem` flow) lived under removed `pipelines/rpi/.../flpath-4164/` — recover from **git history** on `feat/no-pipelines` parent commits. **Future:** dedicated `koku-ui-onprem-cluster-image` skill (separate thread).
+**Quick alternative:** `oc set image deployment/cost-onprem-ui -n cost-onprem app=quay.io/<your-org>/koku-ui-onprem:<tag>` (bypasses Helm values; prefer skill rollout for durable `ui.app.image`).
 
 ## Visual compare
 

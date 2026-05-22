@@ -1,0 +1,70 @@
+# On-demand amd64 build for koku-ui-onprem → personal Quay.
+# Does not deploy to a cluster. Dispatch only (no push/tag triggers).
+#
+# Required secrets: QUAY_USERNAME, QUAY_PASSWORD (push to jkilzi/koku-ui-onprem)
+name: Build koku-ui-onprem
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: Quay image tag (e.g. flpath-4164-rc22)
+        required: true
+        type: string
+      ref:
+        description: Workspace ref to build (branch or SHA; submodule gitlink at that ref)
+        required: false
+        default: main
+        type: string
+
+env:
+  QUAY_REGISTRY: quay.io
+  QUAY_IMAGE: jkilzi/koku-ui-onprem
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout workspace (with submodules)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+          submodules: recursive
+
+      - name: Log submodule pin
+        run: |
+          echo "Workspace ref: ${{ inputs.ref }}"
+          echo "koku-ui submodule:"
+          git -C submodules/koku-ui rev-parse HEAD
+          git -C submodules/koku-ui log -1 --oneline
+
+      - name: Build image
+        id: build
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: ${{ env.QUAY_IMAGE }}
+          tags: ${{ inputs.image_tag }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.title=koku-ui-onprem
+          extra-args: |
+            --ulimit nofile=10000:10000
+          containerfiles: submodules/koku-ui/apps/koku-ui-onprem/Containerfile
+          context: submodules/koku-ui
+
+      - name: Push to Quay.io
+        uses: redhat-actions/push-to-registry@v2.7
+        with:
+          image: ${{ steps.build.outputs.image }}
+          tags: ${{ inputs.image_tag }}
+          registry: ${{ env.QUAY_REGISTRY }}
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_PASSWORD }}
+
+      - name: Summary
+        run: |
+          echo "Pushed: ${{ env.QUAY_REGISTRY }}/${{ env.QUAY_IMAGE }}:${{ inputs.image_tag }}"
+          echo "Roll out locally with koku-ui-onprem-cluster-image skill (rollout-ui-image.sh)."
