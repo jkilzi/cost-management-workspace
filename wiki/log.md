@@ -2,6 +2,14 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-22] update | Load patternfly-addons.css on koku-ui-onprem host
+
+Host `bootstrap.tsx` imports `@patternfly/patternfly/patternfly-addons.css` (same as insights-rbac-ui Storybook) so MUA `display-*-on-lg` utilities work; fixes dropdown+cards both visible without container-query hack.
+
+## [2026-05-22] update | Remove onprem-iam-host MUA container-query CSS
+
+Dropped `onprem-iam-host.css` and wrapper; IAM federated remote uses upstream PF viewport breakpoints only (`display-*-on-lg` at 992px). Stacked-cards band 824–991px was host-side effect of 768px container override.
+
 ## [2026-05-22] ingest | koku-ui-onprem cluster image skill + GHA build
 
 Added `koku-ui-onprem-cluster-image` skill (GHA `workflow_dispatch` build → Quay; local Helm rollout), `.github/workflows/build-koku-ui-onprem.yml`, topic [onprem-ui-cluster-image.md](topics/onprem-ui-cluster-image.md); updated FLPATH-4164 cluster deploy and `AGENTS.md` routing.
