@@ -2,9 +2,17 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-25] update | FLPATH-4164 local verification — 21/21 live Cypress
+
+`build:onprem`, `verify:onprem`, `start:onprem:dev` (cluster-f4rmt), `test:cypress:live` **21/21** (~31s), `/api/rbac/v1/status/` **200** via localhost:9001. Cypress binary reinstalled; `test:cypress:live` unsets `ELECTRON_RUN_AS_NODE` for Cursor/sandbox. Entity page counts updated to 21 tests.
+
 ## [2026-05-22] update | Helm SSA fix — HELM_FORCE_CONFLICTS for UI rollout
 
 `install-helm-chart.sh` supports `HELM_FORCE_CONFLICTS=true` (`--force-conflicts`); `rollout-ui-image.sh` enables by default. Verified Helm upgrade revision 11 on cluster after prior `oc set image` conflicts.
+
+## [2026-05-22] ingest | cluster-f4rmt full stack redeploy (local chart 0.2.20-rc5)
+
+`install-helm-chart.sh cleanup --complete` then `USE_LOCAL_CHART=true` + `ui-image-values.local.yaml` (rc22). Root cause of IAM Roles backend failure: published chart **0.2.19** Envoy ConfigMap lacked `/api/rbac/` (404 NR); local chart on `feat/flpath-4164-ui-rbac-nginx` includes FLPATH-4073 routes. `rbac-migrate` Completed; Keycloak JWT `verify` OK.
 
 ## [2026-05-22] update | Cluster UI rc22 — MUA PF addons + oc set image
 

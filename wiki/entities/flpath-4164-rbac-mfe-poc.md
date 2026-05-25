@@ -48,21 +48,21 @@ On-prem Cost Management RBAC UI: reuse HCC direction, Keycloak between IDP and C
 
 **Deferred:** Upstream RBAC repo edits; `ExtensionsPlugin` parity; Stefan-flagged UX removals until FLPATH-4121 list.
 
-## Implementation status (2026-05-22)
+## Implementation status (2026-05-25)
 
 | Layer | State |
 |-------|--------|
-| Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam`; `npm run verify:onprem` ✅ |
-| Host e2e | `cypress/e2e/live/` — **`test:cypress:live`** **16/16** after **`start:onprem:dev`**; not CI |
+| Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam`; `npm run verify:onprem` ✅ (2026-05-25) |
+| Host e2e | `cypress/e2e/live/` — **`test:cypress:live`** **21/21** after **`start:onprem:dev`** (~31s); not CI |
 | Host | `/rbac/`, `/api/rbac` proxy, `/iam/*`, chrome stub |
 | Chart | nginx `location /rbac/` — `feat/flpath-4164-ui-rbac-nginx` |
 | Cluster image | **`quay.io/jkilzi/koku-ui-onprem:flpath-4164-rc22`** on **`<leased-cluster>`** |
 | Branch | `submodules/koku-ui` → `feat/flpath-4164` |
-| Verified | **Partial pass** — POC shell (rc18); parity must-fix on rc19; OV + MUA bundles on rc20–rc21 |
+| Verified | **Local pass** (2026-05-25) — build + verify + live Cypress + `/api/rbac/v1/status/` **200** via dev proxy |
 | Host nav | `NavExpandable` **Identity and Access Management** → Overview, MUA, Users, Roles, Groups |
-| Visual | [visual-compare/cluster/](visual-compare/cluster/) — rc19+ screenshots; OV `iam.svg` fixed in host |
+| Visual | [visual-compare/cluster/](visual-compare/cluster/) — rc19+ screenshots; live parity screenshots in `cypress/screenshots/04-iam-storybook-parity.cy.ts/` |
 
-**Overall:** POC shell + functional gates satisfied; visual parity must-fix items passed on rc19–rc21. Open: refresh cluster PNGs on rc21; breadcrumbs/tab title out of POC scope.
+**Overall:** POC shell + functional gates satisfied; visual parity must-fix items passed on rc19–rc21. Open: refresh cluster PNGs on rc21+; breadcrumbs/tab title out of POC scope.
 
 ## Acceptance criteria (summary)
 
@@ -72,11 +72,15 @@ On-prem Cost Management RBAC UI: reuse HCC direction, Keycloak between IDP and C
 
 **Host IAM nav:** After Settings, `NavExpandable` **Identity and Access Management** with children: Overview → `/iam/user-access/overview`, My User Access → `/iam/my-user-access`, Users, Roles, Groups (full `/iam/...` paths).
 
-**E2E (local, not CI):** From `submodules/koku-ui` root: `npm run start:onprem:dev` then **`npm run test:cypress:live`** (16 tests — loads, host↔IAM nav, IAM sidebar). Specs: `apps/koku-ui-onprem/cypress/e2e/live/`.
+**E2E (local, not CI):** From `submodules/koku-ui` root: `npm run start:onprem:dev` then **`npm run test:cypress:live`** (**21** tests — `01`–`03` nav/load, `04` Storybook parity). Specs: `apps/koku-ui-onprem/cypress/e2e/live/`. If Cypress verify fails with `bad option: --no-sandbox`, unset `ELECTRON_RUN_AS_NODE` (set by some IDE sandboxes).
 
 **Cluster (manual, oauth2-proxy):** Deployed tag matches record; in-pod `/rbac/plugin-manifest.json` **200**; manual Chrome for IAM nav behind SSO.
 
 **Out of scope:** Cluster Cypress without auth; full Helm upgrade unblock; pixel-perfect SaaS chrome outside POC slice.
+
+## Cluster redeploy note (2026-05-22)
+
+IAM `/api/rbac/v1/*` calls require Envoy route `prefix: /api/rbac/` (FLPATH-4073). **Published** Helm repo chart **0.2.19** / **0.2.20-rc4** omit it; **`USE_LOCAL_CHART=true`** from `submodules/cost-onprem-chart` (`feat/flpath-4164-ui-rbac-nginx`, chart **0.2.20-rc5**) is required until a published release includes that template. Symptom without route: gateway access log **404** `response_flags=NR`, RBAC API pod healthy in-cluster.
 
 ## Nav diagnosis (2026-05-19, resolved)
 

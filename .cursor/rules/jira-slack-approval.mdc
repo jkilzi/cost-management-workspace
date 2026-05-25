@@ -1,0 +1,32 @@
+---
+description: Require user approval before posting to Jira or Slack
+alwaysApply: true
+---
+
+# Jira and Slack — approval before posting
+
+## Requirement
+
+**Never** publish to Jira or Slack without the user's **explicit approval** of the exact message first.
+
+This applies to:
+
+- **Jira** — comments, issue updates, transitions with user-visible text, `jira issue comment add`, Atlassian MCP write actions, and any CLI/API call that posts on the user's behalf
+- **Slack** — channel/DM/thread messages, replies, and Slack MCP write actions
+
+## Workflow
+
+1. **Draft** — Show the full text (and target: issue key, channel, thread) in the chat.
+2. **Wait** — Do not run the post command or MCP tool until the user approves or edits (e.g. "post it", "approved", "send that").
+3. **Post** — Only after approval, execute the single approved version.
+
+## Prohibited
+
+- Posting because the user asked to "add a comment" or "notify Slack" without showing the draft and getting confirmation
+- Assuming approval from a prior message if the draft changed
+- Batching multiple posts without per-message approval when content differs
+
+## Allowed without approval
+
+- **Read-only** operations (view issue, search Jira, list Slack channels, fetch thread history)
+- **Local-only** drafts (wiki, files, commit messages) unless the user asked to publish those to Jira/Slack
