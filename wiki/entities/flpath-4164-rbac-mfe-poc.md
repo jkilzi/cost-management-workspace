@@ -52,17 +52,18 @@ On-prem Cost Management RBAC UI: reuse HCC direction, Keycloak between IDP and C
 
 | Layer | State |
 |-------|--------|
-| Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam`; `npm run verify:onprem` ✅ (2026-05-25) |
+| Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam`; `npm run verify:onprem` ✅ (2026-05-25, re-run pre-PR) |
 | Host e2e | `cypress/e2e/live/` — **`test:cypress:live`** **21/21** after **`start:onprem:dev`** (~31s); not CI |
 | Host | `/rbac/`, `/api/rbac` proxy, `/iam/*`, chrome stub |
-| Chart | nginx `location /rbac/` — `feat/flpath-4164-ui-rbac-nginx` |
+| Chart | nginx `location /rbac/` — PR [insights-onprem/cost-onprem-chart#175](https://github.com/insights-onprem/cost-onprem-chart/pull/175) (`feat/flpath-4164-ui-rbac-nginx-pr`) |
 | Cluster image | **`quay.io/jkilzi/koku-ui-onprem:flpath-4164-rc22`** on **`<leased-cluster>`** |
-| Branch | `submodules/koku-ui` → `feat/flpath-4164` |
-| Verified | **Local pass** (2026-05-25) — build + verify + live Cypress + `/api/rbac/v1/status/` **200** via dev proxy |
+| Branch | `submodules/koku-ui` → `feat/flpath-4164` @ `937935d13` |
+| **PRs (open)** | **koku-ui:** [project-koku/koku-ui#5207](https://github.com/project-koku/koku-ui/pull/5207) · **chart nginx:** [#175](https://github.com/insights-onprem/cost-onprem-chart/pull/175) · **chart RFE (SSA):** [#176](https://github.com/insights-onprem/cost-onprem-chart/pull/176) (separate from 4164) |
+| Verified | **Pre-PR pass** (2026-05-25) — `build:onprem` + `verify:onprem` ✅; prior live Cypress **21/21** + `/api/rbac/v1/status/` **200** via dev proxy |
 | Host nav | `NavExpandable` **Identity and Access Management** → Overview, MUA, Users, Roles, Groups |
 | Visual | [visual-compare/cluster/](visual-compare/cluster/) — rc19+ screenshots; live parity screenshots in `cypress/screenshots/04-iam-storybook-parity.cy.ts/` |
 
-**Overall:** POC shell + functional gates satisfied; visual parity must-fix items passed on rc19–rc21. Open: refresh cluster PNGs on rc21+; breadcrumbs/tab title out of POC scope.
+**Overall:** POC submitted for review (koku-ui #5207 + chart #175). CI pending on koku-ui PR. Follow-up: FLPATH-4152 maintainer sync after merge.
 
 ## Acceptance criteria (summary)
 

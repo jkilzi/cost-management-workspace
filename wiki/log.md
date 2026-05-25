@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-25] update | FLPATH-4164 PRs opened
+
+koku-ui [project-koku/koku-ui#5207](https://github.com/project-koku/koku-ui/pull/5207); chart nginx [insights-onprem/cost-onprem-chart#175](https://github.com/insights-onprem/cost-onprem-chart/pull/175); SSA RFE [#176](https://github.com/insights-onprem/cost-onprem-chart/pull/176) split per plan. Pre-PR `build:onprem` + `verify:onprem` pass on `937935d13`.
+
 ## [2026-05-25] update | FLPATH-4164 local verification — 21/21 live Cypress
 
 `build:onprem`, `verify:onprem`, `start:onprem:dev` (cluster-f4rmt), `test:cypress:live` **21/21** (~31s), `/api/rbac/v1/status/` **200** via localhost:9001. Cypress binary reinstalled; `test:cypress:live` unsets `ELECTRON_RUN_AS_NODE` for Cursor/sandbox. Entity page counts updated to 21 tests.
