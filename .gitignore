@@ -1,5 +1,8 @@
 .DS_Store
 
+# Agent scratch files (Jira drafts, temp exports)
+.cursor/tmp/
+
 # Browser/agent automation dumps (cluster URLs, form values)
 .playwright-mcp/
 
