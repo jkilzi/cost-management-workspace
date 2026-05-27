@@ -57,7 +57,7 @@ On-prem Cost Management RBAC UI: reuse HCC direction, Keycloak between IDP and C
 | Host | `/rbac/`, `/api/rbac` proxy, `/iam/*`, chrome stub |
 | Chart | nginx `location /rbac/` — PR [insights-onprem/cost-onprem-chart#175](https://github.com/insights-onprem/cost-onprem-chart/pull/175) (`feat/flpath-4164-ui-rbac-nginx-pr`) |
 | Cluster image | **`quay.io/jkilzi/koku-ui-onprem:flpath-4164-rc22`** on **`<leased-cluster>`** |
-| Branch | `submodules/koku-ui` → `feat/flpath-4164` @ `b2c22f0bc` (+ local cleanup) |
+| Branch | `submodules/koku-ui` → `feat/flpath-4164` @ `5a235d41f` |
 | **PRs (open)** | **koku-ui:** [project-koku/koku-ui#5207](https://github.com/project-koku/koku-ui/pull/5207) · **chart nginx:** [#175](https://github.com/insights-onprem/cost-onprem-chart/pull/175) · **chart RFE (SSA):** [#176](https://github.com/insights-onprem/cost-onprem-chart/pull/176) (separate from 4164) |
 | Verified | **Pre-PR pass** (2026-05-25) — root `build:onprem` ✅; prior live Cypress **21/21** + `/api/rbac/v1/status/` **200** via dev proxy |
 | Host nav | `NavExpandable` **Identity and Access Management** → Overview, MUA, Users, Roles, Groups |

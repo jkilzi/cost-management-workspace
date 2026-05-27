@@ -4,7 +4,7 @@ Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-
 
 ## [2026-05-27] update | FLPATH-4164 branch cleanup (host + rbac README)
 
-Removed unused `RBAC_ONPREM_REMOTE.publicPath`, legacy `/openshift/cost-management/rbac/*` redirect, merged Scalprum loading fallback; `rbac-ui-onprem` README links to `koku-ui-onprem` instead of workspace wiki. Entity [flpath-4164-rbac-mfe-poc.md](entities/flpath-4164-rbac-mfe-poc.md).
+Removed unused `RBAC_ONPREM_REMOTE.publicPath`, legacy `/openshift/cost-management/rbac/*` redirect, merged Scalprum loading fallback; `rbac-ui-onprem` README links to `koku-ui-onprem` instead of workspace wiki. koku-ui `5a235d41f`; entity [flpath-4164-rbac-mfe-poc.md](entities/flpath-4164-rbac-mfe-poc.md).
 
 ## [2026-05-27] update | remove rbac-ui-onprem vendor.sh
 
