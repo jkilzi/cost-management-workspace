@@ -52,7 +52,7 @@ On-prem Cost Management RBAC UI: reuse HCC direction, Keycloak between IDP and C
 
 | Layer | State |
 |-------|--------|
-| Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam`; `npm run verify:onprem` ✅ (2026-05-25, re-run pre-PR) |
+| Remote | `apps/rbac-ui-onprem` — `insightsRbac`, `/rbac/`, `./Iam`; vendored `vendor/insights-rbac-ui@b4ca374/dist/` ([vendor topic](../topics/rbac-ui-onprem-vendor.md)); `npm run verify:onprem` ✅ |
 | Host e2e | `cypress/e2e/live/` — **`test:cypress:live`** **21/21** after **`start:onprem:dev`** (~31s); not CI |
 | Host | `/rbac/`, `/api/rbac` proxy, `/iam/*`, chrome stub |
 | Chart | nginx `location /rbac/` — PR [insights-onprem/cost-onprem-chart#175](https://github.com/insights-onprem/cost-onprem-chart/pull/175) (`feat/flpath-4164-ui-rbac-nginx-pr`) |
@@ -69,7 +69,7 @@ On-prem Cost Management RBAC UI: reuse HCC direction, Keycloak between IDP and C
 
 **UI-modifying:** yes — `submodules/koku-ui/`.
 
-**Preconditions (local):** `npm run build:onprem`; `npm run verify:onprem`; `npm run start:onprem:dev`; optional `/api/rbac/v1/status/` 2xx via `setup-onprem-env.sh`.
+**Preconditions (local):** `npm run build:onprem`; `npm run verify:onprem`; `npm run start:onprem:dev`; optional `/api/rbac/v1/status/` 2xx via `setup-onprem-env.sh`. Bump upstream RBAC pin: `npm run vendor:rbac-onprem` (network; see [rbac-ui-onprem-vendor](../topics/rbac-ui-onprem-vendor.md)).
 
 **Host IAM nav:** After Settings, `NavExpandable` **Identity and Access Management** with children: Overview → `/iam/user-access/overview`, My User Access → `/iam/my-user-access`, Users, Roles, Groups (full `/iam/...` paths).
 

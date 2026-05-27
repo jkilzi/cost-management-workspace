@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-05-27] ingest | rbac-ui-onprem vendored remote (Konflux)
+
+koku-ui: `npm run vendor:rbac-onprem` clones upstream @ ref to OS temp, webpack build → `vendor/insights-rbac-ui@<short>/dist/`; hermetic `npm ci` / Containerfile without `github:insights-rbac-ui`. Wiki [topics/rbac-ui-onprem-vendor.md](topics/rbac-ui-onprem-vendor.md).
+
 ## [2026-05-27] update | rbac-ui-onprem shims → wiki
 
 Moved [`apps/rbac-ui-onprem/src/shims/README.md`](../../submodules/koku-ui/apps/rbac-ui-onprem/src/shims/README.md) to [topics/rbac-ui-onprem-shims.md](topics/rbac-ui-onprem-shims.md); linked from FLPATH-4164 entity; webpack comment no longer points at removed README.

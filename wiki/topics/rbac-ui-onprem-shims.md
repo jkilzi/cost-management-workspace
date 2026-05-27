@@ -27,6 +27,7 @@ TypeScript alias: `@rbac-ui-onprem/shims/*` → `src/shims/*` ([`tsconfig.json`]
 
 ## Related
 
+- Vendored upstream build / Konflux — [rbac-ui-onprem-vendor.md](rbac-ui-onprem-vendor.md)
 - Host IAM router basename `/iam` — [FLPATH-4164 entity](../entities/flpath-4164-rbac-mfe-poc.md#integration-constants)
 - SaaS chrome / flags shims — [`libs/onprem-cloud-deps`](../../submodules/koku-ui/libs/onprem-cloud-deps/) (separate from this app-local tree)
 - Historical: `TableView` shim removed (2026-05-22); host CSS for bundle cards instead — [wiki log](../log.md)
