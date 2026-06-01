@@ -2,6 +2,10 @@
 
 Append-only timeline of wiki work. **Format:** each entry starts with `## [YYYY-MM-DD] type | Title` where `type` is one of `ingest`, `query`, `lint`, `update`, `bootstrap`.
 
+## [2026-06-01] ingest | rbac-ui-onprem shim necessity ablation
+
+Cluster-backed `start:onprem:dev` + live Cypress **21/21** with **all app shims disabled** (incl. shared `component-groups`); no depth errors. Verdicts on [topics/rbac-ui-onprem-shims.md](topics/rbac-ui-onprem-shims.md); keep shims until no-shim production/cluster gate. koku-ui `238a666c7`, upstream `b4ca3746`.
+
 ## [2026-05-31] ingest | Keycloak org-admin realm role
 
 Wiki [topics/keycloak-org-admin-realm-role.md](topics/keycloak-org-admin-realm-role.md): assign `org-admin` via Admin Console or `deploy-rhbk.sh` + `jwtAuth.realmUsers.orgAdmin`; verify JWT and RBAC `is_org_admin` (My User Access `meta.count`).

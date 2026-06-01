@@ -91,11 +91,15 @@ IAM `/api/rbac/v1/*` calls require Envoy route `prefix: /api/rbac/` (FLPATH-4073
 
 **Fixes:** [rbac-ui-onprem webpack shims](../topics/rbac-ui-onprem-shims.md) (`useAppLink`, `LoaderPlaceholders`, PF `SkeletonTable*`, `component-groups` barrel); host full-page nav for cross-app; stable `useChrome` singleton; `remoteKey` on Scalprum; basename `/iam` on host router.
 
+## Shim necessity (2026-06-01)
+
+Ablation on cluster-backed **`start:onprem:dev`**: live Cypress **21/21** with **all** `src/shims/` webpack replacements disabled (including `component-groups` in `sharedModules`). **No** `Maximum update depth` console errors. Shims **not required for webpack-dev** at koku-ui `238a666c7` / upstream `b4ca3746`; **keep in tree** until a no-shim **production image + cluster SSO** gate passes (historical rc16 ThBase freeze was production nginx). Details: [rbac-ui-onprem-shims analysis](../topics/rbac-ui-onprem-shims.md#necessity-analysis-2026-06-01).
+
 ## Cluster deploy
 
 | Item | Value |
 |------|--------|
-| **Image** | `quay.io/jkilzi/koku-ui-onprem:flpath-4164-rc24` |
+| **Image** | `quay.io/jkilzi/koku-ui-onprem:flpath-4164-rc25` (2026-06-01 in-pod manifest **200**) |
 | **Cluster** | `<leased-cluster>`, namespace `cost-onprem` |
 | **Build** | On-demand GHA — [koku-ui-onprem-cluster-image skill](../../.cursor/skills/koku-ui-onprem-cluster-image/SKILL.md) → `trigger-build.sh <tag>` ([wiki topic](../topics/onprem-ui-cluster-image.md)) |
 | **Rollout** | Local Helm — `ui-image-values.local.yaml` + `rollout-ui-image.sh` (not GHA) |
