@@ -108,7 +108,17 @@ Optional env: `RHBK_NAMESPACE`, `RHBK_OG_TO_DELETE` (default `rhbk-operator-grou
 
 - `NAMESPACE` / Helm target: **`cost-onprem`**
 - `HELM_RELEASE_NAME`: **`cost-onprem`**
+- **`USE_LOCAL_CHART=true`** — **workspace preference** (see [`.cursor/rules/cost-onprem-chart-install-local.mdc`](../../.cursor/rules/cost-onprem-chart-install-local.mdc)); use submodule chart at `submodules/cost-onprem-chart/cost-onprem`, not the Helm repo, unless the user asks for upstream
 - Kafka discovery namespace: **`kafka`** (override with `KAFKA_NAMESPACE`)
+
+**Install / upgrade (this workspace):**
+
+```bash
+cd submodules/cost-onprem-chart
+USE_LOCAL_CHART=true ./scripts/install-helm-chart.sh
+```
+
+After UI nginx ConfigMap changes: `oc rollout restart deployment/cost-onprem-ui -n cost-onprem`.
 
 ## After install
 

@@ -1,0 +1,47 @@
+---
+description: >-
+  When installing or upgrading cost-onprem-chart, default to the local submodule
+  chart (USE_LOCAL_CHART=true), not the upstream Helm repo release.
+alwaysApply: true
+---
+
+# cost-onprem-chart — prefer local chart
+
+## Default interpretation
+
+When the user asks to **install**, **upgrade**, or **deploy** **cost-onprem** / **cost-onprem-chart** (including on a new leased cluster), use the **local chart** in **`submodules/cost-onprem-chart/cost-onprem`**, not the published Helm repo (`insights-onprem.github.io/cost-onprem-chart`).
+
+**User preference (workspace):** local chart over upstream unless they explicitly ask for the Helm repo / a pinned upstream version.
+
+## Preferred command
+
+From **`submodules/cost-onprem-chart`**:
+
+```bash
+cd submodules/cost-onprem-chart
+USE_LOCAL_CHART=true ./scripts/install-helm-chart.sh
+```
+
+The install script defaults to `USE_LOCAL_CHART=false`; **always set `USE_LOCAL_CHART=true`** for this workspace unless the user opts into upstream.
+
+## Why local (typical)
+
+Published stable releases (e.g. **0.2.19**) can lag **`main`** — missing templates such as UI nginx `location /rbac/` and Envoy `/api/rbac/` needed for FLPATH-4164 / RBAC MFE work.
+
+## After install / upgrade
+
+1. `./scripts/install-helm-chart.sh health`
+2. If UI nginx ConfigMap changed: `oc rollout restart deployment/cost-onprem-ui -n cost-onprem` (no ConfigMap checksum on the Deployment; `subPath` mounts need a pod restart)
+3. Keycloak JWT check: `bash .cursor/skills/cost-onprem-chart-install/scripts/keycloak-fix-org-jwt-claims.sh verify` (then `fix` if needed)
+
+## Do not use by default
+
+| Approach | When |
+| -------- | ---- |
+| `./scripts/install-helm-chart.sh` alone | Uses upstream Helm repo — only if user explicitly wants published chart |
+| `CHART_VERSION=0.2.x` without `USE_LOCAL_CHART=true` | Pins upstream, not local submodule |
+
+## References
+
+- Skill: [`.cursor/skills/cost-onprem-chart-install/SKILL.md`](../../.cursor/skills/cost-onprem-chart-install/SKILL.md)
+- Demo Catalog notes: [`wiki/entities/demo-catalog-cost-onprem-install.md`](../../wiki/entities/demo-catalog-cost-onprem-install.md)

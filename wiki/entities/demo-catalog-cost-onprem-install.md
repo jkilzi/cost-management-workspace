@@ -16,14 +16,14 @@ For a **portable** install checklist (any OpenShift, not only Demo Catalog), use
 
 ## Defaults to prefer (minimal typing)
 
-Use chart/script defaults unless you have a reason to override:
+**Workspace preference:** use the **local submodule chart**, not the upstream Helm repo, unless you explicitly want a published release.
 
 | Variable / concept | Default |
 |--------------------|---------|
 | Target namespace | `cost-onprem` (`NAMESPACE`) |
 | Helm release | `cost-onprem` (`HELM_RELEASE_NAME`) |
-| Chart source | Helm repo `https://insights-onprem.github.io/cost-onprem-chart` (`USE_LOCAL_CHART=false`) |
-| Local chart (dev) | `USE_LOCAL_CHART=true`, chart at `submodules/cost-onprem-chart/cost-onprem` — run scripts from `submodules/cost-onprem-chart/` so `install-helm-chart.sh` resolves `../cost-onprem` correctly |
+| Chart source | **Local:** `USE_LOCAL_CHART=true`, chart at `submodules/cost-onprem-chart/cost-onprem` — run scripts from `submodules/cost-onprem-chart/` so `install-helm-chart.sh` resolves `../cost-onprem` correctly |
+| Upstream Helm repo (opt-in) | `USE_LOCAL_CHART=false` → `https://insights-onprem.github.io/cost-onprem-chart` — lags `main` (e.g. missing UI `/rbac/` nginx until published) |
 | Kafka namespace (script discovery) | `kafka` unless `KAFKA_NAMESPACE` is set |
 | RHBK namespace | `keycloak` (`RHBK_NAMESPACE` for [`deploy-rhbk.sh`](../../submodules/cost-onprem-chart/scripts/deploy-rhbk.sh)) |
 | Install entrypoint | [`submodules/cost-onprem-chart/scripts/install-helm-chart.sh`](../../submodules/cost-onprem-chart/scripts/install-helm-chart.sh) |
