@@ -1,3 +1,11 @@
+---
+type: Topic
+title: On-prem Cypress e2e (koku-ui-onprem)
+description: Cypress integration and live e2e test layout under koku-ui-onprem/cypress/; run after start:onprem:dev, not in CI.
+tags: [cypress, e2e, koku-ui-onprem, testing, playwright]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # On-prem Cypress e2e (koku-ui-onprem)
 
 **Location:** [`submodules/koku-ui/apps/koku-ui-onprem/cypress/`](../../submodules/koku-ui/apps/koku-ui-onprem/cypress/)

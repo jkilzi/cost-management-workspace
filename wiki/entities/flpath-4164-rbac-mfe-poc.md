@@ -1,3 +1,11 @@
+---
+type: Entity
+title: FLPATH-4164 — RBAC UI on-prem MFE (POC)
+description: POC federating insights-rbac-ui into koku-ui-onprem via Scalprum/DynamicRemotePlugin; plan phases, acceptance criteria, cluster deploy, visual-compare assets.
+tags: [flpath-4164, rbac, koku-ui, cost-onprem-chart, mfe, scalprum, flpath-3424]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # FLPATH-4164 — RBAC UI on-prem MFE (POC)
 
 **Jira:** [FLPATH-4164](https://redhat.atlassian.net/browse/FLPATH-4164) (*POC: RBAC UI as on-prem MFE (koku-ui-onprem + chart RBAC API)*). **Parent:** [FLPATH-3424](https://redhat.atlassian.net/browse/FLPATH-3424).

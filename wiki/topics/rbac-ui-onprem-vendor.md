@@ -1,3 +1,11 @@
+---
+type: Topic
+title: rbac-ui-onprem vendored RBAC upstream
+description: insights-rbac-ui git submodule in koku-ui for hermetic Konflux builds; file: devDependency pattern.
+tags: [rbac, koku-ui, vendor, submodule, konflux, flpath-4164, npm]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # rbac-ui-onprem vendored RBAC upstream
 
 **Scope:** [FLPATH-4164](../entities/flpath-4164-rbac-mfe-poc.md) · **App:** [`submodules/koku-ui/apps/rbac-ui-onprem/`](../../submodules/koku-ui/apps/rbac-ui-onprem/)

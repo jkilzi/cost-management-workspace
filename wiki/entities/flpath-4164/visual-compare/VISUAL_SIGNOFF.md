@@ -1,3 +1,11 @@
+---
+type: Reference
+title: FLPATH-4164 — Visual sign-off (rc18 POC)
+description: Visual sign-off record for FLPATH-4164 rc18/rc19 POC cluster images; before/after screenshot comparison.
+tags: [flpath-4164, visual-compare, sign-off, koku-ui-onprem]
+timestamp: 2026-05-21T00:00:00Z
+---
+
 # FLPATH-4164 — Visual sign-off (rc18 POC)
 
 **Date:** 2026-05-21  

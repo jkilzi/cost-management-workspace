@@ -404,3 +404,7 @@ Host `FlagProvider`, `Containerfile` `./rbac`, plan drift fix; `setup-onprem-env
 ## [2026-05-17] update | FLPATH-4164 Phase 1 verify + Phase 2 host
 
 `verify-onprem-rbac.sh` finds `Iam` bundle under `dist/exposed-./`; `koku-ui-onprem` static `/rbac/`, `/api/rbac` proxy, `/iam/*` route + nav; PLAN/IMPLEMENTATION_LOG + `wiki/entities/flpath-4164-rbac-mfe-poc.md`.
+
+## [2026-06-17] update | OKF v0.1 frontmatter + subdirectory indexes
+
+Added OKF-conformant YAML frontmatter (`type`, `title`, `description`, `tags`, `timestamp`) to all 18 concept documents. Created `wiki/entities/index.md`, `wiki/topics/index.md`, `wiki/workspace/index.md` for progressive disclosure. Updated `llm-wiki.mdc` to require frontmatter on all new pages going forward. Root `wiki/index.md` section headings now link to subdirectory indexes.

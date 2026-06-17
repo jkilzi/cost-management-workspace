@@ -1,3 +1,11 @@
+---
+type: KnownIssue
+title: Known issue — Keycloak declarative user profile drops org_id / account_number from JWT
+description: Modern Keycloak/RHBK default user profile omits custom attributes; Envoy JWT validation fails with 401 and triggers UI re-login loop.
+tags: [keycloak, rhbk, jwt, org_id, account_number, envoy, cost-onprem]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Known issue: Keycloak declarative user profile and missing JWT `org_id` / `account_number`
 
 ## Summary

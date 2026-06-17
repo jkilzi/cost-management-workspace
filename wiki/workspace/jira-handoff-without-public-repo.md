@@ -1,3 +1,11 @@
+---
+type: Workspace
+title: Jira handoff — workspace not published
+description: How to make research outcomes discoverable in Jira when this workspace repo is private; paste summaries, carry-forward, attachments.
+tags: [jira, workflow, private-repo, handoff]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Jira handoff when this workspace is not published
 
 Wiki entity pages (`wiki/entities/<scope>.md`) are authoritative for agents and for humans who have the git checkout. **Jira users without repo access** cannot follow raw paths in comments.

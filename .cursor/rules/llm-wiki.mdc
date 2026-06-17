@@ -44,9 +44,31 @@ Skip trivia, secrets, one-off typos, or anything already the single source of tr
 
 1. **Create or edit** the relevant topic/entity pages under `wiki/` (relative links between pages).
 2. Update [`wiki/index.md`](../../wiki/index.md): entry or one-line summary per page; keep categories honest.
-3. Append one line to [`wiki/log.md`](../../wiki/log.md): `## [YYYY-MM-DD] ingest \| Short title` or `query \|`, `lint \|`, `update \|` as appropriate.
+3. Update the subdirectory `index.md` (e.g. `wiki/entities/index.md`) with a bullet entry for any new page.
+4. Append one line to [`wiki/log.md`](../../wiki/log.md): `## [YYYY-MM-DD] ingest \| Short title` or `query \|`, `lint \|`, `update \|` as appropriate.
 
 Optional **raw** inputs for later ingest live only under [`wiki/raw/`](../../wiki/raw/) (immutable for agents — summarize into wiki pages, do not edit sources).
+
+## OKF frontmatter (required on every new concept page)
+
+Every new wiki page (concept document) **must** open with a YAML frontmatter block before the first heading. Use the following fields:
+
+```yaml
+---
+type: <Entity | KnownIssue | Topic | Workspace | Reference>
+title: <Human-readable display name>
+description: <One sentence summary — used in index previews and agent retrieval.>
+tags: [<tag1>, <tag2>, …]
+timestamp: <ISO 8601 date, e.g. 2026-06-17T00:00:00Z>
+---
+```
+
+- `type` is **required**. Choose the value that best matches the page's role (add new types if needed — they are not registered centrally).
+- `description` feeds subdirectory `index.md` bullet text and agent search snippets.
+- `tags` enable `rg "tags:.*<keyword>"` across `wiki/` and Obsidian Dataview queries.
+- `index.md` and `log.md` files are OKF reserved filenames — **do not** add frontmatter to them.
+
+This follows the [Open Knowledge Format (OKF) v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) specification.
 
 ## Query habit
 

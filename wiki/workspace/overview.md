@@ -1,3 +1,11 @@
+---
+type: Workspace
+title: Workspace overview
+description: Cost Management meta-workspace structure; Karpathy wiki, constitutions, submodules, and Cursor harness layout.
+tags: [workspace, overview, cursor-harness, submodules]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Workspace overview
 
 This repository is a **Cost Management** meta-workspace: the Karpathy wiki, per-submodule constitutions, checkout copies under `submodules/`, and the Cursor harness (`.cursor/rules`, `.cursor/skills`, `.cursor/plans`).

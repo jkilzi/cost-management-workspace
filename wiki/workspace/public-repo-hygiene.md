@@ -1,3 +1,11 @@
+---
+type: Workspace
+title: Public repo hygiene
+description: What not to commit and how to redact personal URLs when this workspace or excerpts may be shared publicly.
+tags: [git, public, security, hygiene, quay, cluster-urls]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Public repo hygiene
 
 Guidance when this workspace (or excerpts) may be shared outside a trusted team.

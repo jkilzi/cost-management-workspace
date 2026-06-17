@@ -1,3 +1,11 @@
+---
+type: Topic
+title: Keycloak org-admin realm role (on-prem)
+description: How to assign the org-admin realm role in Keycloak/RHBK for cost-onprem; verify JWT and RBAC is_org_admin.
+tags: [keycloak, rhbk, org-admin, realm-role, cost-onprem, jwt]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Keycloak `org-admin` realm role (on-prem)
 
 **Scope:** Cost Management on-prem · **Realm:** default `kubernetes` (from [`deploy-rhbk.sh`](../../submodules/cost-onprem-chart/scripts/deploy-rhbk.sh))

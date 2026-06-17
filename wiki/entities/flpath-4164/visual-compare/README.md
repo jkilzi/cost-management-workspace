@@ -1,3 +1,11 @@
+---
+type: Reference
+title: FLPATH-4164 — Visual compare assets
+description: Directory structure and git-ignore policy for cluster screenshots used in FLPATH-4164 visual sign-off.
+tags: [flpath-4164, visual-compare, screenshots]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Visual compare assets
 
 | Directory | Git |

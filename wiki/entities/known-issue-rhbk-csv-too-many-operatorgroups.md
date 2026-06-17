@@ -1,3 +1,11 @@
+---
+type: KnownIssue
+title: Known issue — RHBK CSV Failed (TooManyOperatorGroups)
+description: RHBK ClusterServiceVersion shows Failed when more than one OperatorGroup exists in the keycloak namespace; fix removes duplicate OperatorGroup.
+tags: [rhbk, keycloak, olm, operatorgroup, csv, openshift]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Known issue: RHBK CSV Failed (`TooManyOperatorGroups`)
 
 ## Summary

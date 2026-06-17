@@ -1,3 +1,11 @@
+---
+type: Reference
+title: Sources UI — reference submodule
+description: submodules/sources-ui pins RedHatInsights/sources-ui for SaaS Platform Sources UI reference; not built by cost-onprem-chart.
+tags: [sources-ui, koku-ui, submodule, saas, reference]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Sources UI (reference submodule)
 
 ## Role in this workspace

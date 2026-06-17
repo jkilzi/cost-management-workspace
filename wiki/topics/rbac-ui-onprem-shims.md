@@ -1,3 +1,11 @@
+---
+type: Topic
+title: rbac-ui-onprem webpack shims
+description: Webpack module replacements for federated RBAC IAM in koku-ui-onprem; useAppLink only after 2026-06-01 removal pass.
+tags: [rbac, koku-ui, shims, webpack, flpath-4164, useAppLink]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # rbac-ui-onprem webpack shims
 
 **Scope:** [FLPATH-4164](../entities/flpath-4164-rbac-mfe-poc.md) · **App:** [`submodules/koku-ui/apps/rbac-ui-onprem/`](../../submodules/koku-ui/apps/rbac-ui-onprem/)

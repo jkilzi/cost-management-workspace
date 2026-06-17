@@ -1,3 +1,11 @@
+---
+type: Workspace
+title: Jira CLI — change issue link type
+description: Pattern for changing Jira link types using ankitpokhrel/jira-cli; unlink then re-link with desired type.
+tags: [jira, jira-cli, workflow, issue-links]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Jira CLI: change issue link type (`jira` / ankitpokhrel/jira-cli)
 
 Jira does **not** support editing a link’s type in place. The reliable pattern is **unlink the old relationship**, then **link again** with the desired type.

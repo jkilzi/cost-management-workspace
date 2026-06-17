@@ -1,3 +1,11 @@
+---
+type: Workspace
+title: Public push checklist
+description: Post-history-scrub and gitleaks verification checklist before force-pushing to a public remote.
+tags: [git, public, gitleaks, security, history-scrub]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Public push checklist
 
 Use after [history scrub](../../scripts/history-scrub/run-filter-repo.sh) and a clean **gitleaks** scan.

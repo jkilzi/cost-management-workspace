@@ -1,3 +1,11 @@
+---
+type: Entity
+title: FLPATH-4180 — FEC extension points vs on-prem RBAC MFE
+description: Research closeout comparing FEC ExtensionsPlugin vs on-prem Scalprum + DynamicRemotePlugin; unblocks FLPATH-4164.
+tags: [flpath-4180, flpath-4164, rbac, fec, scalprum, research, closed]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # FLPATH-4180 — FEC extension points vs on-prem RBAC MFE
 
 **Jira:** [FLPATH-4180](https://redhat.atlassian.net/browse/FLPATH-4180) (*Research FEC extension points for embedding/delivering RBAC UI*) — **Closed** / **Done**. Linked to [FLPATH-4164](https://redhat.atlassian.net/browse/FLPATH-4164) as **Related** (was **Blocks**; changed 2026-05-14 — see [jira-cli-issue-links.md](../workspace/jira-cli-issue-links.md)).

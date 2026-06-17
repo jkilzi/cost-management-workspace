@@ -1,3 +1,11 @@
+---
+type: Topic
+title: UI verification and E2E (Cursor harness)
+description: How to verify UI-modifying work in this workspace; acceptance criteria on entity pages; mandatory Cypress live e2e when UI changes.
+tags: [verification, e2e, testing, cursor-harness, cypress, koku-ui-onprem]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # UI verification and E2E (Cursor harness)
 
 How to verify UI-modifying work in this workspace **without** a pipeline `40-verify` stage.

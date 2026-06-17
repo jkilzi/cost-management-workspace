@@ -1,8 +1,8 @@
 # Wiki index
 
-Catalog of pages in this workspace wiki. **Agents:** keep this list accurate when you add, rename, or materially change a page (one line per page, link + summary).
+Catalog of pages in this workspace wiki. **Agents:** keep this list accurate when you add, rename, or materially change a page (one line per page, link + summary). Each subdirectory has its own `index.md` for progressive disclosure — browse those first when drilling into a section.
 
-## Workspace
+## Workspace — [index](workspace/index.md)
 
 | Page | Summary |
 |------|---------|
@@ -18,7 +18,7 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 |------|---------|
 | [../docs/architecture/c4/README.md](../docs/architecture/c4/README.md) | **C4 architecture** for Cost Management on-prem (context, containers, Koku/UI components, data flows, repo map). |
 
-## Topics
+## Topics — [index](topics/index.md)
 
 | Page | Summary |
 |------|---------|
@@ -29,7 +29,7 @@ Catalog of pages in this workspace wiki. **Agents:** keep this list accurate whe
 | [topics/rbac-ui-onprem-vendor.md](topics/rbac-ui-onprem-vendor.md) | **Vendored RBAC upstream:** `koku-ui/vendor/insights-rbac-ui` git submodule; `file:` devDependency; webpack in Containerfile (Konflux). |
 | [topics/keycloak-org-admin-realm-role.md](topics/keycloak-org-admin-realm-role.md) | **Keycloak `org-admin`:** assign realm role (console or `deploy-rhbk.sh` + `orgAdmin: true`); verify JWT / RBAC `is_org_admin` / My User Access. |
 
-## Entities
+## Entities — [index](entities/index.md)
 
 | Page | Summary |
 |------|---------|

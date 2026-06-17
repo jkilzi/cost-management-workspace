@@ -1,3 +1,11 @@
+---
+type: Topic
+title: On-prem UI cluster image (build + rollout)
+description: GHA on-demand linux/amd64 build of koku-ui-onprem pushed to Quay; local Helm rollout without Apple Silicon QEMU issues.
+tags: [koku-ui-onprem, docker, openshift, gha, quay, helm, amd64]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # On-prem UI cluster image (build + rollout)
 
 **Skill:** [`.cursor/skills/koku-ui-onprem-cluster-image/`](../../.cursor/skills/koku-ui-onprem-cluster-image/SKILL.md)

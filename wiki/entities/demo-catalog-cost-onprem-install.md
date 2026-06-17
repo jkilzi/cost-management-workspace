@@ -1,3 +1,11 @@
+---
+type: Entity
+title: Demo Catalog — cost-onprem-chart install notes
+description: Workspace-specific runbook for deploying cost-onprem-chart on a Red Hat Demo Platform leased cluster.
+tags: [cost-onprem-chart, openshift, demo-catalog, keycloak, rhbk, install]
+timestamp: 2026-06-17T00:00:00Z
+---
+
 # Demo Catalog OpenShift: cost-onprem-chart install notes
 
 Workspace-specific runbook for deploying **[cost-onprem-chart](../../submodules/cost-onprem-chart/)** on a **Red Hat Demo Platform** leased cluster (personal service catalog). **Canonical procedures** remain in the submodule: [`docs/operations/installation.md`](../../submodules/cost-onprem-chart/docs/operations/installation.md) and [`docs/operations/configuration.md`](../../submodules/cost-onprem-chart/docs/operations/configuration.md).
