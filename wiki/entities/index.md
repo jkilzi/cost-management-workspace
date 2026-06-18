@@ -5,6 +5,7 @@ Scoped work items (Jira tickets, known issues, reference pages).
 ## Active entities
 
 * [FLPATH-4164 — RBAC UI on-prem MFE (POC)](flpath-4164-rbac-mfe-poc.md) - Federating insights-rbac-ui into koku-ui-onprem via Scalprum/DynamicRemotePlugin.
+* [COST-7671 — Align RBAC UI with UX Requirements](cost-7671-rbac-ui-ux-alignment.md) - UX requirements from Figma for adapting the RBAC MFE POC to Cost Management design specs.
 * [FLPATH-4180 — FEC extension points vs on-prem RBAC MFE](flpath-4180-fec-rbac-mfe.md) - Research closeout comparing FEC vs Scalprum; unblocks FLPATH-4164. *(Closed)*
 
 ## Install / ops

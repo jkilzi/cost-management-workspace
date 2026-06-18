@@ -408,3 +408,11 @@ Host `FlagProvider`, `Containerfile` `./rbac`, plan drift fix; `setup-onprem-env
 ## [2026-06-17] update | OKF v0.1 frontmatter + subdirectory indexes
 
 Added OKF-conformant YAML frontmatter (`type`, `title`, `description`, `tags`, `timestamp`) to all 18 concept documents. Created `wiki/entities/index.md`, `wiki/topics/index.md`, `wiki/workspace/index.md` for progressive disclosure. Updated `llm-wiki.mdc` to require frontmatter on all new pages going forward. Root `wiki/index.md` section headings now link to subdirectory indexes.
+
+## [2026-06-17] update | setup-onprem-env.sh CMMO fallback + eza hang RCA
+
+`setup-onprem-env.sh` rewritten: CMMO discovery kept as primary; new fallback reads API URL from `cost-onprem-api` route, token URL from `cost-onprem-keycloak-debug` CM, and credentials from `keycloak-client-secret-cost-management-operator` (keycloak ns) — no CMMO required. eza hang root cause identified: blocks on `read(stdin)` when Cursor shell passes a unix socket; workaround is to avoid `ls`/`eza` in agent Shell calls and use full script paths to skip zsh chpwd hooks.
+
+## [2026-06-17] ingest | COST-7671 RBAC UX alignment — Figma board analysis
+
+Created `wiki/entities/cost-7671-rbac-ui-ux-alignment.md`: extracted UX requirements from 18 Figma board images (file UFM3q6rv3W5lhw0JhmUnl9). Key requirements: cost-scoped role/permission filter on Users detail, Application column, workspace hierarchy screens. Updated entities/index.md and wiki/index.md.
