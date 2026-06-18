@@ -21,6 +21,25 @@ npm run start:onprem:dev
 
 This runs [`scripts/setup-onprem-env.sh`](../../submodules/koku-ui/scripts/setup-onprem-env.sh) (requires `oc` logged into a cluster with cost-onprem), then [`start:onprem`](../../submodules/koku-ui/package.json) via `concurrently`. Default URL: **http://localhost:9001/**.
 
+## Auth dev mode (login / logout testing)
+
+When the user wants to **test the login screen**, **test logout**, or **run with real OIDC sessions**, use:
+
+```bash
+npm run start:onprem:auth
+```
+
+This sources [`scripts/start-onprem-auth.mts`](../../submodules/koku-ui/scripts/start-onprem-auth.mts) which:
+1. Sources `setup-onprem-env.sh` (discovers `API_PROXY_URL`, verifies `oc` login).
+2. Reads `oauth2-proxy` args + image from the live `cost-onprem-ui` Deployment (cluster = single source of truth).
+3. Reads `cost-management-ui` client credentials from `keycloak-client-secret-cost-management-ui`.
+4. Starts webpack on `:9001` with `OAUTH2_PROXY_MODE=true` (disables `TokenRefresher`).
+5. Starts an `oauth2-proxy` container on `:9002` (Podman or Docker; auto-detected).
+
+Open **http://localhost:9002** — the Keycloak login page appears.
+
+**Prerequisites**: `oc` login + Podman **or** Docker running (no binary install of `oauth2-proxy` needed).
+
 ## Do not use by default
 
 | Command | When |

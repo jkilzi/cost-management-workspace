@@ -416,3 +416,15 @@ Added OKF-conformant YAML frontmatter (`type`, `title`, `description`, `tags`, `
 ## [2026-06-17] ingest | COST-7671 RBAC UX alignment — Figma board analysis
 
 Created `wiki/entities/cost-7671-rbac-ui-ux-alignment.md`: extracted UX requirements from 18 Figma board images (file UFM3q6rv3W5lhw0JhmUnl9). Key requirements: cost-scoped role/permission filter on Users detail, Application column, workspace hierarchy screens. Updated entities/index.md and wiki/index.md.
+
+## [2026-06-18] update | start:onprem:auth — oauth2-proxy dev mode
+
+Added `scripts/start-onprem-auth.mts` (TypeScript ESM, zero external deps, runs via `node --experimental-strip-types`) and three `webpack.config.ts` changes to `submodules/koku-ui` to support a new `npm run start:onprem:auth` dev mode that replicates production OIDC auth locally. Script reads `oauth2-proxy` image and args from the live cluster Deployment at runtime (single source of truth). Secrets passed as bare `-e KEY` container flags (never in CLI args). Implemented logging helpers, SRP step functions, and a `try/finally` cleanup strategy.
+
+Key design decisions:
+- Cluster Deployment is the single source of truth for `oauth2-proxy` flags/image — script strips cluster-only flags and injects local overrides at runtime.
+- Secrets passed as container env vars (`OAUTH2_PROXY_CLIENT_ID`, `OAUTH2_PROXY_CLIENT_SECRET`, `OAUTH2_PROXY_COOKIE_SECRET`), never CLI args.
+- `OAUTH2_PROXY_MODE=true` env var gates `TokenRefresher`, `/api/me` header trust, proxy header injection, and `/logout` redirect in `webpack.config.ts`.
+- `oauth2-proxy` runs in a Podman/Docker container — no binary install needed; runtime auto-detected.
+- Trap-based cleanup kills webpack PID, stops the container, and removes the temp CA cert file on EXIT/INT/TERM.
+- Updated `apps/koku-ui-onprem/README.md`, `package.json` (`start:onprem:auth`), and `.cursor/rules/koku-ui-onprem-dev-server.mdc`.
