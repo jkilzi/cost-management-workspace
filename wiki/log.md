@@ -428,3 +428,11 @@ Key design decisions:
 - `oauth2-proxy` runs in a Podman/Docker container — no binary install needed; runtime auto-detected.
 - Trap-based cleanup kills webpack PID, stops the container, and removes the temp CA cert file on EXIT/INT/TERM.
 - Updated `apps/koku-ui-onprem/README.md`, `package.json` (`start:onprem:auth`), and `.cursor/rules/koku-ui-onprem-dev-server.mdc`.
+
+## [2026-06-19] update | Fix start:onprem:auth bugs; restrict runtime to podman/docker
+
+- **jsonpath split bug**: `readSecretField` was embedding the jsonpath expression across a shell tagged-template literal/value boundary. The `shell` helper splits literal parts on whitespace, so `jsonpath={.data.` became a separate arg and `oc` received a truncated "unclosed action". Fix: pre-build the full expression as an interpolated variable.
+- **Unsupported runtime guard**: `detectContainerRuntime` now fails early with a clear message when `CONTAINER_RUNTIME` names anything other than `podman` or `docker` (e.g. Apple's `container` CLI uses incompatible `ps`/`run` flags).
+- **Cleanup timeout**: `container stop` in `cleanup()` is now raced against a 15 s `sleep` so a broken runtime cannot block graceful shutdown indefinitely.
+- **`findInPath` simplification**: rewrote to delegate to the existing `shell` helper via `which`, removing the `execFile`/`promisify` imports.
+- **Docs**: removed `wslc`/`container` alternative runtime mentions from `README.md` and `docs/auth-enabled-dev-mode.md`; corrected detection-order description (env var → podman → docker).
