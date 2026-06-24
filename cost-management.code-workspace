@@ -9,8 +9,8 @@
 			"name": "koku-ui"
 		},
 		{
-			"path": "submodules/koku-ui/vendor/insights-rbac-frontend",
-			"name": "insights-rbac-frontend"
+			"path": "submodules/koku-ui/vendor/insights-rbac-ui",
+			"name": "insights-rbac-ui"
 		},
 		{
 			"path": "submodules/koku",
