@@ -1,13 +1,24 @@
 {	
 	"folders": [
 		{
-			"path": "submodules/koku-ui"
+			"path": ".",
+			"name": "workspace"
+		},
+		{
+			"path": "submodules/koku-ui",
+			"name": "koku-ui"
+		},
+		{
+			"path": "submodules/koku-ui/vendor/insights-rbac-frontend",
+			"name": "insights-rbac-frontend"
 		},
 		{
 			"path": "submodules/koku",
+			"name": "koku"
 		},
 		{
-			"path": "submodules/cost-onprem-chart"
+			"path": "submodules/cost-onprem-chart",
+			"name": "cost-onprem-chart"
 		},
 	],
 }
